@@ -7,7 +7,5 @@ mops add waterway-mops
 
 ## Usage
 ```motoko
-import WaterwayMops "mo:waterway-mops";
-
-// example...
-```
+import BaseTypes "mo:waterway-mops";
+import FootballTypes "mo:waterway-mops";
