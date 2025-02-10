@@ -1,4 +1,4 @@
-import FootballTypes "../src/FootballTypes";
+import FootballTypes "mo:waterway-mops/FootballTypes";
 import List "mo:base/List";
 import Debug "mo:base/Debug";
 import Blob "mo:base/Blob";

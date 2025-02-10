@@ -1,4 +1,4 @@
-import BaseTypes "../src/BaseTypes";
+import BaseTypes "mo:waterway-mops/BaseTypes";
 import Debug "mo:base/Debug";
 import Principal "mo:base/Principal";
 
