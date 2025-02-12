@@ -7,6 +7,11 @@ module BaseTypes {
     public type ProposalId = Nat;
     public type RustResult = { #Ok : Text; #Err : Text };
 
+    public type AppStatus = {
+        onHold : Bool;
+        version : Text;
+    };
+
     public type Gender = {
         #Male;
         #Female;
