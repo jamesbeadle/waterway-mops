@@ -230,13 +230,13 @@ module FootballTypes {
     seasonId : FootballTypes.SeasonId;
   };
 
-  type LeagueTable = {
+  public type LeagueTable = {
     leagueId : FootballTypes.LeagueId;
     seasonId : FootballTypes.SeasonId;
     entries : LeagueTableEntry;
   };
 
-  type LeagueTableEntry = {
+  public type LeagueTableEntry = {
     position : Nat;
     clubId : FootballTypes.ClubId;
     played : Nat;
