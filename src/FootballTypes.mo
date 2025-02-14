@@ -5,11 +5,11 @@ module FootballTypes {
   public type GameweekNumber = Nat8;
   public type SeasonId = Nat16;
   public type FixtureId = Nat32;
-  
+
   public type LeagueId = Nat16;
   public type ClubId = Nat16;
   public type PlayerId = Nat16;
-  
+
   public type ProposalId = Nat;
 
   public type Country = {
@@ -17,33 +17,33 @@ module FootballTypes {
     name : Text;
     code : Text;
   };
-    
+
   public type League = {
-    id: LeagueId;
-    name: Text;
-    abbreviation: Text;
-    teamCount: Nat8;
-    relatedGender: Base.Gender;
-    governingBody: Text;
-    formed: Int;
-    countryId: Base.CountryId;
-    logo: Blob;
+    id : LeagueId;
+    name : Text;
+    abbreviation : Text;
+    teamCount : Nat8;
+    relatedGender : Base.Gender;
+    governingBody : Text;
+    formed : Int;
+    countryId : Base.CountryId;
+    logo : Blob;
   };
 
   public type LeagueStatus = {
-    leagueId: LeagueId;
-    activeSeasonId: SeasonId;
-    activeMonth: Base.CalendarMonth;
-    unplayedGameweek: GameweekNumber;
-    activeGameweek: GameweekNumber;
-    completedGameweek: GameweekNumber;
-    transferWindowActive: Bool;
+    leagueId : LeagueId;
+    activeSeasonId : SeasonId;
+    activeMonth : Base.CalendarMonth;
+    unplayedGameweek : GameweekNumber;
+    activeGameweek : GameweekNumber;
+    completedGameweek : GameweekNumber;
+    transferWindowActive : Bool;
     seasonActive : Bool;
-    totalGameweeks: Nat8;
-    transferWindowStartDay: Nat8;
-    transferWindowStartMonth: Nat8;
-    transferWindowEndDay: Nat8;
-    transferWindowEndMonth: Nat8;
+    totalGameweeks : Nat8;
+    transferWindowStartDay : Nat8;
+    transferWindowStartMonth : Nat8;
+    transferWindowEndDay : Nat8;
+    transferWindowEndMonth : Nat8;
   };
 
   public type Club = {
@@ -71,7 +71,6 @@ module FootballTypes {
     events : List.List<PlayerEventData>;
   };
 
-
   public type Season = {
     id : Nat16;
     name : Text;
@@ -82,7 +81,7 @@ module FootballTypes {
 
   public type Player = {
     id : PlayerId;
-    leagueId: LeagueId;
+    leagueId : LeagueId;
     clubId : ClubId;
     position : PlayerPosition;
     firstName : Text;
@@ -95,13 +94,13 @@ module FootballTypes {
     valueHistory : List.List<ValueHistory>;
     status : PlayerStatus;
     currentLoanEndDate : Int;
-    parentLeagueId: LeagueId;
+    parentLeagueId : LeagueId;
     parentClubId : ClubId;
     latestInjuryEndDate : Int;
     injuryHistory : List.List<InjuryHistory>;
     transferHistory : List.List<TransferHistory>;
     retirementDate : Int;
-    gender: Base.Gender;
+    gender : Base.Gender;
   };
 
   public type PlayerSeason = {
@@ -126,50 +125,49 @@ module FootballTypes {
   };
 
   public type PlayerPosition = {
-      #Goalkeeper;
-      #Defender;
-      #Midfielder;
-      #Forward;
+    #Goalkeeper;
+    #Defender;
+    #Midfielder;
+    #Forward;
   };
 
-
   public type PlayerStatus = {
-      #Active;
-      #Retired;
-      #OnLoan;
-      #FreeAgent;
+    #Active;
+    #Retired;
+    #OnLoan;
+    #FreeAgent;
   };
 
   public type ShirtType = {
-      #Filled;
-      #Striped;
+    #Filled;
+    #Striped;
   };
 
   public type GoalType = {
-      #LeftFoot;
-      #RightFoot;
-      #Header;
-      #OutsideBox;
-      #DirectSetPiece;
+    #LeftFoot;
+    #RightFoot;
+    #Header;
+    #OutsideBox;
+    #DirectSetPiece;
   };
 
   public type PlayerEventType = {
-      #Appearance;
-      #Goal;
-      #GoalAssisted;
-      #GoalConceded;
-      #KeeperSave;
-      #CleanSheet;
-      #PenaltySaved;
-      #PenaltyMissed;
-      #YellowCard;
-      #RedCard;
-      #OwnGoal;
-      #HighestScoringPlayer;
+    #Appearance;
+    #Goal;
+    #GoalAssisted;
+    #GoalConceded;
+    #KeeperSave;
+    #CleanSheet;
+    #PenaltySaved;
+    #PenaltyMissed;
+    #YellowCard;
+    #RedCard;
+    #OwnGoal;
+    #HighestScoringPlayer;
   };
 
   public type ValueHistory = {
-    changedOn: Int;
+    changedOn : Int;
     oldValue : Nat16;
     newValue : Nat16;
   };
@@ -182,8 +180,8 @@ module FootballTypes {
 
   public type TransferHistory = {
     transferDate : Int;
-    fromLeagueId: LeagueId;
-    toLeagueId: LeagueId;
+    fromLeagueId : LeagueId;
+    toLeagueId : LeagueId;
     fromClub : ClubId;
     toClub : ClubId;
     loanEndDate : Int;
@@ -229,6 +227,39 @@ module FootballTypes {
     seasonPoints : Int16;
     transferWindowGameweek : FootballTypes.GameweekNumber;
     month : Base.CalendarMonth;
-    seasonId: FootballTypes.SeasonId;
+    seasonId : FootballTypes.SeasonId;
   };
+
+  type LeagueTable = {
+    leagueId : FootballTypes.LeagueId;
+    seasonId : FootballTypes.SeasonId;
+    entries : LeagueTableEntry;
+  };
+
+  type LeagueTableEntry = {
+    position : Nat;
+    clubId : FootballTypes.ClubId;
+    played : Nat;
+    won : Nat;
+    drawn : Nat;
+    lost : Nat;
+    conceded : Nat;
+    scored : Nat;
+    points : Nat;
+    homePlayed : Nat;
+    homeWon : Nat;
+    homeDrawn : Nat;
+    homeLost : Nat;
+    homeConceded : Nat;
+    homeScored : Nat;
+    homePoints : Nat;
+    awayPlayed : Nat;
+    awayWon : Nat;
+    awayDrawn : Nat;
+    awayLost : Nat;
+    awayConceded : Nat;
+    awayScored : Nat;
+    awayPoints : Nat;
+  };
+
 };
