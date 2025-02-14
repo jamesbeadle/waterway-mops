@@ -233,7 +233,7 @@ module FootballTypes {
   public type LeagueTable = {
     leagueId : FootballTypes.LeagueId;
     seasonId : FootballTypes.SeasonId;
-    entries : LeagueTableEntry;
+    entries : [LeagueTableEntry];
   };
 
   public type LeagueTableEntry = {
