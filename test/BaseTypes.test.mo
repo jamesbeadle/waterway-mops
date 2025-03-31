@@ -3,6 +3,7 @@ import Principal "mo:base/Principal";
 import Blob "mo:base/Blob";
 import Text "mo:base/Text";
 import Debug "mo:base/Debug";
+import BaseDefinitions "../src/BaseDefinitions";
 
 // Helper function to run assertions
 func assertTrue(condition : Bool, message : Text) : async () {
@@ -14,7 +15,7 @@ func assertTrue(condition : Bool, message : Text) : async () {
 
 // Test 1: CalendarMonth (Nat8)
 func testCalendarMonth() : async () {
-    let month : BaseTypes.CalendarMonth = 12; // December
+    let month : BaseDefinitions.CalendarMonth = 12; // December
     await assertTrue(month <= 12, "CalendarMonth should be <= 12");
     await assertTrue(month >= 1, "CalendarMonth should be >= 1");
 };
