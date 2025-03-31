@@ -1,3 +1,6 @@
+[![mops](https://oknww-riaaa-aaaam-qaf6a-cai.raw.ic0.app/badge/mops/waterway-mops)](https://mops.one/waterway-mops)
+[![documentation](https://oknww-riaaa-aaaam-qaf6a-cai.raw.ic0.app/badge/documentation/waterway-mops)](https://mops.one/waterway-mops/docs)
+
 # waterway-mops
 
 ## Install
