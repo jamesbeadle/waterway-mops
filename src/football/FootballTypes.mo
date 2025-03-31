@@ -4,7 +4,7 @@ import List "mo:base/List";
 import MopsIds "../Ids";
 import FootballIds "FootballIds";
 import FootballEnums "FootballEnums";
-import FootballDefinations "FootballDefinations";
+import FootballDefinitions "FootballDefinitions";
 module FootballTypes {
 
   public type League = {
@@ -23,9 +23,9 @@ module FootballTypes {
     leagueId : FootballIds.LeagueId;
     activeSeasonId : FootballIds.SeasonId;
     activeMonth : Base.CalendarMonth;
-    unplayedGameweek : FootballDefinations.GameweekNumber;
-    activeGameweek : FootballDefinations.GameweekNumber;
-    completedGameweek : FootballDefinations.GameweekNumber;
+    unplayedGameweek : FootballDefinitions.GameweekNumber;
+    activeGameweek : FootballDefinitions.GameweekNumber;
+    completedGameweek : FootballDefinitions.GameweekNumber;
     transferWindowActive : Bool;
     seasonActive : Bool;
     totalGameweeks : Nat8;
@@ -49,7 +49,7 @@ module FootballTypes {
   public type Fixture = {
     id : FootballIds.FixtureId;
     seasonId : FootballIds.SeasonId;
-    gameweek : FootballDefinations.GameweekNumber;
+    gameweek : FootballDefinitions.GameweekNumber;
     kickOff : Int;
     homeClubId : FootballIds.ClubId;
     awayClubId : FootballIds.ClubId;
@@ -99,7 +99,7 @@ module FootballTypes {
   };
 
   public type PlayerGameweek = {
-    number : FootballDefinations.GameweekNumber;
+    number : FootballDefinitions.GameweekNumber;
     events : List.List<PlayerEventData>;
     points : Int16;
   };
@@ -144,28 +144,28 @@ module FootballTypes {
     teamValueQuarterMillions : Nat16;
     playerIds : [FootballIds.PlayerId];
     captainId : FootballIds.PlayerId;
-    gameweek : FootballDefinations.GameweekNumber;
-    goalGetterGameweek : FootballDefinations.GameweekNumber;
+    gameweek : FootballDefinitions.GameweekNumber;
+    goalGetterGameweek : FootballDefinitions.GameweekNumber;
     goalGetterPlayerId : FootballIds.PlayerId;
-    passMasterGameweek : FootballDefinations.GameweekNumber;
+    passMasterGameweek : FootballDefinitions.GameweekNumber;
     passMasterPlayerId : FootballIds.PlayerId;
-    noEntryGameweek : FootballDefinations.GameweekNumber;
+    noEntryGameweek : FootballDefinitions.GameweekNumber;
     noEntryPlayerId : FootballIds.PlayerId;
-    teamBoostGameweek : FootballDefinations.GameweekNumber;
+    teamBoostGameweek : FootballDefinitions.GameweekNumber;
     teamBoostClubId : FootballIds.ClubId;
-    safeHandsGameweek : FootballDefinations.GameweekNumber;
+    safeHandsGameweek : FootballDefinitions.GameweekNumber;
     safeHandsPlayerId : FootballIds.PlayerId;
-    captainFantasticGameweek : FootballDefinations.GameweekNumber;
+    captainFantasticGameweek : FootballDefinitions.GameweekNumber;
     captainFantasticPlayerId : FootballIds.PlayerId;
-    oneNationGameweek : FootballDefinations.GameweekNumber;
+    oneNationGameweek : FootballDefinitions.GameweekNumber;
     oneNationCountryId : MopsIds.CountryId;
-    prospectsGameweek : FootballDefinations.GameweekNumber;
-    braceBonusGameweek : FootballDefinations.GameweekNumber;
-    hatTrickHeroGameweek : FootballDefinations.GameweekNumber;
+    prospectsGameweek : FootballDefinitions.GameweekNumber;
+    braceBonusGameweek : FootballDefinitions.GameweekNumber;
+    hatTrickHeroGameweek : FootballDefinitions.GameweekNumber;
     points : Int16;
     monthlyPoints : Int16;
     seasonPoints : Int16;
-    transferWindowGameweek : FootballDefinations.GameweekNumber;
+    transferWindowGameweek : FootballDefinitions.GameweekNumber;
     month : Base.CalendarMonth;
     seasonId : FootballIds.SeasonId;
   };
