@@ -14,6 +14,7 @@ module MopsEnums {
         #MaxDataExceeded;
         #InvalidProperty;
         #InsufficientFunds;
+        #FailedInterCanisterCall;
     };
 
     public type EntryRequirement = {
