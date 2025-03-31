@@ -1,200 +1,125 @@
-import BaseTypes "mo:waterway-mops/BaseTypes";
-import Debug "mo:base/Debug";
+import BaseTypes "../src/BaseTypes";
 import Principal "mo:base/Principal";
+import Blob "mo:base/Blob";
+import Text "mo:base/Text";
+import Error "mo:base/Error";
+import Debug "mo:base/Debug";
 
-
-func runTests() : async () {
-    await testPrincipalId();
-    await testCanisterId();
-    await testCalendarMonth();
-    await testCountryId();
-    await testProposalId();
-    await testRustResult();
-    await testGender();
-    await testDataHash();
-    await testCountry();
-    await testCanisterTopup();
-    await testSystemLog();
-    await testLogEntryType();
-    await testAccount();
-    await testTimerInfo();
-    Debug.print("All tests passed!");
+// Helper function to run assertions
+func assertTrue(condition : Bool, message : Text) : async () {
+    if (not condition) {
+        Debug.print("Assertion failed: " # message);
+        assert (false);
+    };
 };
 
-func testPrincipalId() : async () {
-    let principalId : BaseTypes.PrincipalId = "some-principal-id";
-
-    assert(principalId == "some-principal-id");
-    Debug.print("PrincipalId test passed!");
-};
-
-func testCanisterId() : async () {
-    let canisterId : BaseTypes.CanisterId = "some-canister-id";
-
-    assert(canisterId == "some-canister-id");
-    Debug.print("CanisterId test passed!");
-};
-
+// Test 1: CalendarMonth (Nat8)
 func testCalendarMonth() : async () {
-    let calendarMonth : BaseTypes.CalendarMonth = 12;
-
-    assert(calendarMonth == 12);
-    Debug.print("CalendarMonth test passed!");
+    let month : BaseTypes.CalendarMonth = 12; // December
+    await assertTrue(month <= 12, "CalendarMonth should be <= 12");
+    await assertTrue(month >= 1, "CalendarMonth should be >= 1");
 };
 
-func testCountryId() : async () {
-    let countryId : BaseTypes.CountryId = 1;
-
-    assert(countryId == 1);
-    Debug.print("CountryId test passed!");
-};
-
-func testProposalId() : async () {
-    let proposalId : BaseTypes.ProposalId = 123;
-
-    assert(proposalId == 123);
-    Debug.print("ProposalId test passed!");
-};
-
+// Test 2: RustResult
 func testRustResult() : async () {
-    let okResult : BaseTypes.RustResult = #Ok "success";
-    let errResult : BaseTypes.RustResult = #Err "failure";
+    let okResult : BaseTypes.RustResult = #Ok("Success");
+    let errResult : BaseTypes.RustResult = #Err("Failure");
 
     switch (okResult) {
-        case (#Ok(text)) { assert(text == "success"); };
-        case (#Err(_)) { assert(false); };
+        case (#Ok(text)) await assertTrue(text == "Success", "RustResult #Ok should match text");
+        case (_) await assertTrue(false, "RustResult #Ok case failed");
     };
 
     switch (errResult) {
-        case (#Ok(_)) { assert(false); };
-        case (#Err(text)) { assert(text == "failure"); };
+        case (#Err(text)) await assertTrue(text == "Failure", "RustResult #Err should match text");
+        case (_) await assertTrue(false, "RustResult #Err case failed");
     };
-
-    Debug.print("RustResult test passed!");
 };
 
-func testGender() : async () {
-    let male : BaseTypes.Gender = #Male;
-    let female : BaseTypes.Gender = #Female;
-
-    switch (male) {
-        case (#Male) { assert(true); };
-        case (#Female) { assert(false); };
+// Test 3: AppStatus
+func testAppStatus() : async () {
+    let status : BaseTypes.AppStatus = {
+        onHold = true;
+        version = "1.0.0";
     };
-
-    switch (female) {
-        case (#Male) { assert(false); };
-        case (#Female) { assert(true); };
-    };
-
-    Debug.print("Gender test passed!");
+    await assertTrue(status.onHold, "AppStatus onHold should be true");
+    await assertTrue(status.version == "1.0.0", "AppStatus version should match");
 };
 
-func testDataHash() : async () {
-    let dataHash : BaseTypes.DataHash = {
-        category = "example";
-        hash = "abc123";
-    };
-
-    assert(dataHash.category == "example");
-    assert(dataHash.hash == "abc123");
-    Debug.print("DataHash test passed!");
-};
-
+// Test 4: Country
 func testCountry() : async () {
     let country : BaseTypes.Country = {
-        id = 1;
+        id = 1; // Assuming CountryId is Nat or similar
         name = "United States";
         code = "US";
     };
-
-    assert(country.id == 1);
-    assert(country.name == "United States");
-    assert(country.code == "US");
-    Debug.print("Country test passed!");
+    await assertTrue(country.id == 1, "Country id should match");
+    await assertTrue(country.name == "United States", "Country name should match");
+    await assertTrue(country.code == "US", "Country code should match");
 };
 
+// Test 5: CanisterTopup
 func testCanisterTopup() : async () {
-    let canisterTopup : BaseTypes.CanisterTopup = {
-        canisterId = "some-canister-id";
-        topupTime = 1234567890;
-        cyclesAmount = 1000;
+    let topup : BaseTypes.CanisterTopup = {
+        canisterId = "aaaaa-aa"; // Example canister ID
+        topupTime = 1617235200000; // Example timestamp (2021-04-01 UTC)
+        cyclesAmount = 1_000_000_000;
     };
-
-    assert(canisterTopup.canisterId == "some-canister-id");
-    assert(canisterTopup.topupTime == 1234567890);
-    assert(canisterTopup.cyclesAmount == 1000);
-    Debug.print("CanisterTopup test passed!");
+    await assertTrue(topup.canisterId == "aaaaa-aa", "CanisterTopup canisterId should match");
+    await assertTrue(topup.topupTime == 1617235200000, "CanisterTopup topupTime should match");
+    await assertTrue(topup.cyclesAmount == 1_000_000_000, "CanisterTopup cyclesAmount should match");
 };
 
+// Test 6: SystemLog and LogEntryType
 func testSystemLog() : async () {
-    let systemLog : BaseTypes.SystemLog = {
+    let log : BaseTypes.SystemLog = {
         eventId = 1;
-        eventTime = 1234567890;
-        eventType = #SystemCheck;
-        eventTitle = "System Check";
-        eventDetail = "System check completed successfully";
+        eventTime = 1617235200000;
+        eventType = #CanisterTopup;
+        eventTitle = "Topup Event";
+        eventDetail = "Canister topped up with 1T cycles";
     };
-
-    assert(systemLog.eventId == 1);
-    assert(systemLog.eventTime == 1234567890);
-    assert(systemLog.eventType == #SystemCheck);
-    assert(systemLog.eventTitle == "System Check");
-    assert(systemLog.eventDetail == "System check completed successfully");
-    Debug.print("SystemLog test passed!");
+    await assertTrue(log.eventId == 1, "SystemLog eventId should match");
+    await assertTrue(log.eventTime == 1617235200000, "SystemLog eventTime should match");
+    switch (log.eventType) {
+        case (#CanisterTopup) await assertTrue(true, "SystemLog eventType should be CanisterTopup");
+        case (_) await assertTrue(false, "SystemLog eventType mismatch");
+    };
+    await assertTrue(log.eventTitle == "Topup Event", "SystemLog eventTitle should match");
+    await assertTrue(log.eventDetail == "Canister topped up with 1T cycles", "SystemLog eventDetail should match");
 };
 
-func testLogEntryType() : async () {
-    let systemCheck : BaseTypes.LogEntryType = #SystemCheck;
-    let unexpectedError : BaseTypes.LogEntryType = #UnexpectedError;
-    let canisterTopup : BaseTypes.LogEntryType = #CanisterTopup;
-    let managerCanisterCreated : BaseTypes.LogEntryType = #ManagerCanisterCreated;
-
-    switch (systemCheck) {
-        case (#SystemCheck) { assert(true); };
-        case (_) { assert(false); };
-    }; 
-
-    switch (unexpectedError) {
-        case (#UnexpectedError) { assert(true); };
-        case (_) { assert(false); };
-    };
-
-    switch (canisterTopup) {
-        case (#CanisterTopup) { assert(true); };
-        case (_) { assert(false); };
-    };
-
-    switch (managerCanisterCreated) {
-        case (#ManagerCanisterCreated) { assert(true); };
-        case (_) { assert(false); };
-    };
-
-    Debug.print("LogEntryType test passed!");
-};
-
+// Test 7: Account
 func testAccount() : async () {
     let account : BaseTypes.Account = {
-        owner = Principal.fromText("un4fu-tqaaa-aaaab-qadjq-cai");
-        subaccount = "some-subaccount";
+        owner = Principal.fromText("aaaaa-aa");
+        subaccount = Blob.fromArray([0, 1, 2, 3]);
     };
-
-    assert(account.owner == Principal.fromText("un4fu-tqaaa-aaaab-qadjq-cai"));
-    assert(account.subaccount == "some-subaccount");
-    Debug.print("Account test passed!");
+    await assertTrue(Principal.toText(account.owner) == "aaaaa-aa", "Account owner should match");
+    await assertTrue(Blob.toArray(account.subaccount) == [0, 1, 2, 3], "Account subaccount should match");
 };
 
+// Test 8: TimerInfo
 func testTimerInfo() : async () {
-    let timerInfo : BaseTypes.TimerInfo = {
-        id = 1;
-        triggerTime = 1234567890;
-        callbackName = "someCallback";
+    let timer : BaseTypes.TimerInfo = {
+        id = 42;
+        triggerTime = 1617235200000;
+        callbackName = "executeTask";
     };
+    await assertTrue(timer.id == 42, "TimerInfo id should match");
+    await assertTrue(timer.triggerTime == 1617235200000, "TimerInfo triggerTime should match");
+    await assertTrue(timer.callbackName == "executeTask", "TimerInfo callbackName should match");
+};
 
-    assert(timerInfo.id == 1);
-    assert(timerInfo.triggerTime == 1234567890);
-    assert(timerInfo.callbackName == "someCallback");
-    Debug.print("TimerInfo test passed!");
+func runTests() : async () {
+    await testCalendarMonth();
+    await testRustResult();
+    await testAppStatus();
+    await testCountry();
+    await testCanisterTopup();
+    await testSystemLog();
+    await testAccount();
+    await testTimerInfo();
 };
 
 runTests();

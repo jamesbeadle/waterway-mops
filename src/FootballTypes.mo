@@ -1,5 +1,7 @@
 import Base "BaseTypes";
+import Enums "Enums";
 import List "mo:base/List";
+import MopsIds "Ids";
 module FootballTypes {
 
   public type GameweekNumber = Nat8;
@@ -12,21 +14,15 @@ module FootballTypes {
 
   public type ProposalId = Nat;
 
-  public type Country = {
-    id : Base.CountryId;
-    name : Text;
-    code : Text;
-  };
-
   public type League = {
     id : LeagueId;
     name : Text;
     abbreviation : Text;
     teamCount : Nat8;
-    relatedGender : Base.Gender;
+    relatedGender : Enums.Gender;
     governingBody : Text;
     formed : Int;
-    countryId : Base.CountryId;
+    countryId : MopsIds.CountryId;
     logo : Blob;
   };
 
@@ -89,7 +85,7 @@ module FootballTypes {
     shirtNumber : Nat8;
     valueQuarterMillions : Nat16;
     dateOfBirth : Int;
-    nationality : Base.CountryId;
+    nationality : MopsIds.CountryId;
     seasons : List.List<PlayerSeason>;
     valueHistory : List.List<ValueHistory>;
     status : PlayerStatus;
@@ -100,7 +96,7 @@ module FootballTypes {
     injuryHistory : List.List<InjuryHistory>;
     transferHistory : List.List<TransferHistory>;
     retirementDate : Int;
-    gender : Base.Gender;
+    gender : Enums.Gender;
   };
 
   public type PlayerSeason = {
@@ -218,7 +214,7 @@ module FootballTypes {
     captainFantasticGameweek : FootballTypes.GameweekNumber;
     captainFantasticPlayerId : FootballTypes.PlayerId;
     oneNationGameweek : FootballTypes.GameweekNumber;
-    oneNationCountryId : Base.CountryId;
+    oneNationCountryId : MopsIds.CountryId;
     prospectsGameweek : FootballTypes.GameweekNumber;
     braceBonusGameweek : FootballTypes.GameweekNumber;
     hatTrickHeroGameweek : FootballTypes.GameweekNumber;

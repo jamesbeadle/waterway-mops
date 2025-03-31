@@ -1,20 +1,12 @@
+import MopsIds "Ids";
 module BaseTypes {
 
-    public type PrincipalId = Text;
-    public type CanisterId = Text;
     public type CalendarMonth = Nat8;
-    public type CountryId = Nat16;
-    public type ProposalId = Nat;
     public type RustResult = { #Ok : Text; #Err : Text };
 
     public type AppStatus = {
         onHold : Bool;
         version : Text;
-    };
-
-    public type Gender = {
-        #Male;
-        #Female;
     };
 
     public type DataHash = {
@@ -23,23 +15,23 @@ module BaseTypes {
     };
 
     public type Country = {
-        id : CountryId;
+        id : MopsIds.CountryId;
         name : Text;
         code : Text;
     };
 
     public type CanisterTopup = {
-        canisterId: CanisterId;
-        topupTime: Int;
-        cyclesAmount: Nat;
+        canisterId : MopsIds.CanisterId;
+        topupTime : Int;
+        cyclesAmount : Nat;
     };
 
     public type SystemLog = {
-        eventId: Nat;
-        eventTime: Int;
-        eventType: LogEntryType;
-        eventTitle: Text;
-        eventDetail: Text;
+        eventId : Nat;
+        eventTime : Int;
+        eventType : LogEntryType;
+        eventTitle : Text;
+        eventDetail : Text;
     };
 
     public type LogEntryType = {
