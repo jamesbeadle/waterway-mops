@@ -2,7 +2,6 @@ import BaseTypes "../src/BaseTypes";
 import Principal "mo:base/Principal";
 import Blob "mo:base/Blob";
 import Text "mo:base/Text";
-import Error "mo:base/Error";
 import Debug "mo:base/Debug";
 
 // Helper function to run assertions
@@ -49,7 +48,7 @@ func testAppStatus() : async () {
 // Test 4: Country
 func testCountry() : async () {
     let country : BaseTypes.Country = {
-        id = 1; // Assuming CountryId is Nat or similar
+        id = 1; 
         name = "United States";
         code = "US";
     };
