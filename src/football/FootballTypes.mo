@@ -5,6 +5,7 @@ import MopsIds "../Ids";
 import FootballIds "FootballIds";
 import FootballEnums "FootballEnums";
 import FootballDefinitions "FootballDefinitions";
+import BaseDefinitions "../BaseDefinitions";
 module FootballTypes {
 
   public type League = {
@@ -22,7 +23,7 @@ module FootballTypes {
   public type LeagueStatus = {
     leagueId : FootballIds.LeagueId;
     activeSeasonId : FootballIds.SeasonId;
-    activeMonth : Base.CalendarMonth;
+    activeMonth : BaseDefinitions.CalendarMonth;
     unplayedGameweek : FootballDefinitions.GameweekNumber;
     activeGameweek : FootballDefinitions.GameweekNumber;
     completedGameweek : FootballDefinitions.GameweekNumber;
@@ -166,7 +167,7 @@ module FootballTypes {
     monthlyPoints : Int16;
     seasonPoints : Int16;
     transferWindowGameweek : FootballDefinitions.GameweekNumber;
-    month : Base.CalendarMonth;
+    month : BaseDefinitions.CalendarMonth;
     seasonId : FootballIds.SeasonId;
   };
 
