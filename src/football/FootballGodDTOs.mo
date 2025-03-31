@@ -1,6 +1,7 @@
 import FootballTypes "FootballTypes";
-import MopsIds "Ids";
+import MopsIds "../Ids";
 import FootballIds "FootballIds";
+import FootballEnums "FootballEnums";
 
 module DTOs {
 
@@ -19,7 +20,7 @@ module DTOs {
         awayClubId : FootballIds.ClubId;
         homeGoals : Nat8;
         awayGoals : Nat8;
-        status : FootballTypes.FixtureStatusType;
+        status : FootballEnums.FixtureStatusType;
         highestScoringPlayerId : Nat16;
         events : [FootballTypes.PlayerEventData];
     };
@@ -27,7 +28,7 @@ module DTOs {
     public type PlayerDetailDTO = {
         id : FootballIds.PlayerId;
         clubId : FootballIds.ClubId;
-        position : FootballTypes.PlayerPosition;
+        position : FootballEnums.PlayerPosition;
         firstName : Text;
         lastName : Text;
         shirtNumber : Nat8;
@@ -37,7 +38,7 @@ module DTOs {
         seasonId : FootballIds.SeasonId;
         gameweeks : [PlayerGameweekDTO];
         valueHistory : [FootballTypes.ValueHistory];
-        status : FootballTypes.PlayerStatus;
+        status : FootballEnums.PlayerStatus;
         parentClubId : FootballIds.ClubId;
         latestInjuryEndDate : Int;
         injuryHistory : [FootballTypes.InjuryHistory];
@@ -59,7 +60,7 @@ module DTOs {
         secondaryColourHex : Text;
         thirdColourHex : Text;
         abbreviatedName : Text;
-        shirtType : FootballTypes.ShirtType;
+        shirtType : FootballEnums.ShirtType;
     };
 
     public type PlayerScoreDTO = {
@@ -68,7 +69,7 @@ module DTOs {
         clubId : FootballIds.ClubId;
         goalsScored : Int16;
         goalsConceded : Int16;
-        position : FootballTypes.PlayerPosition;
+        position : FootballEnums.PlayerPosition;
         nationality : MopsIds.CountryId;
         dateOfBirth : Int;
         saves : Int16;
@@ -81,7 +82,7 @@ module DTOs {
         gameweek : FootballTypes.GameweekNumber;
         points : Int16;
         clubId : FootballIds.ClubId;
-        position : FootballTypes.PlayerPosition;
+        position : FootballEnums.PlayerPosition;
         events : [FootballTypes.PlayerEventData];
     };
 

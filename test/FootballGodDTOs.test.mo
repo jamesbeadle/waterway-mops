@@ -1,4 +1,4 @@
-import FootballGodDTOs "../src/FootballGodDTOs";
+import FootballGodDTOs "../src/football/FootballGodDTOs";
 import Text "mo:base/Text";
 import Error "mo:base/Error";
 

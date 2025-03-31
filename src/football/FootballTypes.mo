@@ -1,8 +1,9 @@
-import Base "BaseTypes";
-import Enums "Enums";
+import Base "../BaseTypes";
+import Enums "../Enums";
 import List "mo:base/List";
-import MopsIds "Ids";
+import MopsIds "../Ids";
 import FootballIds "FootballIds";
+import FootballEnums "FootballEnums";
 module FootballTypes {
 
   public type GameweekNumber = Nat8;
@@ -43,7 +44,7 @@ module FootballTypes {
     secondaryColourHex : Text;
     thirdColourHex : Text;
     abbreviatedName : Text;
-    shirtType : ShirtType;
+    shirtType : FootballEnums.ShirtType;
   };
 
   public type Fixture = {
@@ -55,7 +56,7 @@ module FootballTypes {
     awayClubId : FootballIds.ClubId;
     homeGoals : Nat8;
     awayGoals : Nat8;
-    status : FixtureStatusType;
+    status : FootballEnums.FixtureStatusType;
     highestScoringPlayerId : FootballIds.PlayerId;
     events : List.List<PlayerEventData>;
   };
@@ -72,7 +73,7 @@ module FootballTypes {
     id : FootballIds.PlayerId;
     leagueId : FootballIds.LeagueId;
     clubId : FootballIds.ClubId;
-    position : PlayerPosition;
+    position : FootballEnums.PlayerPosition;
     firstName : Text;
     lastName : Text;
     shirtNumber : Nat8;
@@ -81,7 +82,7 @@ module FootballTypes {
     nationality : MopsIds.CountryId;
     seasons : List.List<PlayerSeason>;
     valueHistory : List.List<ValueHistory>;
-    status : PlayerStatus;
+    status : FootballEnums.PlayerStatus;
     currentLoanEndDate : Int;
     parentLeagueId : FootballIds.LeagueId;
     parentClubId : FootballIds.ClubId;
@@ -107,52 +108,10 @@ module FootballTypes {
   public type PlayerEventData = {
     fixtureId : FootballIds.FixtureId;
     playerId : Nat16;
-    eventType : PlayerEventType;
+    eventType : FootballEnums.PlayerEventType;
     eventStartMinute : Nat8;
     eventEndMinute : Nat8;
     clubId : FootballIds.ClubId;
-  };
-
-  public type PlayerPosition = {
-    #Goalkeeper;
-    #Defender;
-    #Midfielder;
-    #Forward;
-  };
-
-  public type PlayerStatus = {
-    #Active;
-    #Retired;
-    #OnLoan;
-    #FreeAgent;
-  };
-
-  public type ShirtType = {
-    #Filled;
-    #Striped;
-  };
-
-  public type GoalType = {
-    #LeftFoot;
-    #RightFoot;
-    #Header;
-    #OutsideBox;
-    #DirectSetPiece;
-  };
-
-  public type PlayerEventType = {
-    #Appearance;
-    #Goal;
-    #GoalAssisted;
-    #GoalConceded;
-    #KeeperSave;
-    #CleanSheet;
-    #PenaltySaved;
-    #PenaltyMissed;
-    #YellowCard;
-    #RedCard;
-    #OwnGoal;
-    #HighestScoringPlayer;
   };
 
   public type ValueHistory = {
@@ -174,13 +133,6 @@ module FootballTypes {
     fromClub : FootballIds.ClubId;
     toClub : FootballIds.ClubId;
     loanEndDate : Int;
-  };
-
-  public type FixtureStatusType = {
-    #Unplayed;
-    #Active;
-    #Complete;
-    #Finalised;
   };
 
   public type FantasyTeamSnapshot = {
