@@ -2,20 +2,13 @@ import Base "BaseTypes";
 import Enums "Enums";
 import List "mo:base/List";
 import MopsIds "Ids";
+import FootballIds "FootballIds";
 module FootballTypes {
 
   public type GameweekNumber = Nat8;
-  public type SeasonId = Nat16;
-  public type FixtureId = Nat32;
-
-  public type LeagueId = Nat16;
-  public type ClubId = Nat16;
-  public type PlayerId = Nat16;
-
-  public type ProposalId = Nat;
 
   public type League = {
-    id : LeagueId;
+    id : FootballIds.LeagueId;
     name : Text;
     abbreviation : Text;
     teamCount : Nat8;
@@ -27,8 +20,8 @@ module FootballTypes {
   };
 
   public type LeagueStatus = {
-    leagueId : LeagueId;
-    activeSeasonId : SeasonId;
+    leagueId : FootballIds.LeagueId;
+    activeSeasonId : FootballIds.SeasonId;
     activeMonth : Base.CalendarMonth;
     unplayedGameweek : GameweekNumber;
     activeGameweek : GameweekNumber;
@@ -43,7 +36,7 @@ module FootballTypes {
   };
 
   public type Club = {
-    id : ClubId;
+    id : FootballIds.ClubId;
     name : Text;
     friendlyName : Text;
     primaryColourHex : Text;
@@ -54,16 +47,16 @@ module FootballTypes {
   };
 
   public type Fixture = {
-    id : FixtureId;
-    seasonId : SeasonId;
+    id : FootballIds.FixtureId;
+    seasonId : FootballIds.SeasonId;
     gameweek : GameweekNumber;
     kickOff : Int;
-    homeClubId : ClubId;
-    awayClubId : ClubId;
+    homeClubId : FootballIds.ClubId;
+    awayClubId : FootballIds.ClubId;
     homeGoals : Nat8;
     awayGoals : Nat8;
     status : FixtureStatusType;
-    highestScoringPlayerId : PlayerId;
+    highestScoringPlayerId : FootballIds.PlayerId;
     events : List.List<PlayerEventData>;
   };
 
@@ -76,9 +69,9 @@ module FootballTypes {
   };
 
   public type Player = {
-    id : PlayerId;
-    leagueId : LeagueId;
-    clubId : ClubId;
+    id : FootballIds.PlayerId;
+    leagueId : FootballIds.LeagueId;
+    clubId : FootballIds.ClubId;
     position : PlayerPosition;
     firstName : Text;
     lastName : Text;
@@ -90,8 +83,8 @@ module FootballTypes {
     valueHistory : List.List<ValueHistory>;
     status : PlayerStatus;
     currentLoanEndDate : Int;
-    parentLeagueId : LeagueId;
-    parentClubId : ClubId;
+    parentLeagueId : FootballIds.LeagueId;
+    parentClubId : FootballIds.ClubId;
     latestInjuryEndDate : Int;
     injuryHistory : List.List<InjuryHistory>;
     transferHistory : List.List<TransferHistory>;
@@ -100,7 +93,7 @@ module FootballTypes {
   };
 
   public type PlayerSeason = {
-    id : SeasonId;
+    id : FootballIds.SeasonId;
     gameweeks : List.List<PlayerGameweek>;
     totalPoints : Int16;
   };
@@ -112,12 +105,12 @@ module FootballTypes {
   };
 
   public type PlayerEventData = {
-    fixtureId : FixtureId;
+    fixtureId : FootballIds.FixtureId;
     playerId : Nat16;
     eventType : PlayerEventType;
     eventStartMinute : Nat8;
     eventEndMinute : Nat8;
-    clubId : ClubId;
+    clubId : FootballIds.ClubId;
   };
 
   public type PlayerPosition = {
@@ -176,10 +169,10 @@ module FootballTypes {
 
   public type TransferHistory = {
     transferDate : Int;
-    fromLeagueId : LeagueId;
-    toLeagueId : LeagueId;
-    fromClub : ClubId;
-    toClub : ClubId;
+    fromLeagueId : FootballIds.LeagueId;
+    toLeagueId : FootballIds.LeagueId;
+    fromClub : FootballIds.ClubId;
+    toClub : FootballIds.ClubId;
     loanEndDate : Int;
   };
 
@@ -193,48 +186,48 @@ module FootballTypes {
   public type FantasyTeamSnapshot = {
     principalId : Text;
     username : Text;
-    favouriteClubId : ?FootballTypes.ClubId;
+    favouriteClubId : ?FootballIds.ClubId;
     monthlyBonusesAvailable : Nat8;
     transfersAvailable : Nat8;
     bankQuarterMillions : Nat16;
     teamValueQuarterMillions : Nat16;
-    playerIds : [FootballTypes.PlayerId];
-    captainId : FootballTypes.PlayerId;
-    gameweek : FootballTypes.GameweekNumber;
-    goalGetterGameweek : FootballTypes.GameweekNumber;
-    goalGetterPlayerId : FootballTypes.PlayerId;
-    passMasterGameweek : FootballTypes.GameweekNumber;
-    passMasterPlayerId : FootballTypes.PlayerId;
-    noEntryGameweek : FootballTypes.GameweekNumber;
-    noEntryPlayerId : FootballTypes.PlayerId;
-    teamBoostGameweek : FootballTypes.GameweekNumber;
-    teamBoostClubId : FootballTypes.ClubId;
-    safeHandsGameweek : FootballTypes.GameweekNumber;
-    safeHandsPlayerId : FootballTypes.PlayerId;
-    captainFantasticGameweek : FootballTypes.GameweekNumber;
-    captainFantasticPlayerId : FootballTypes.PlayerId;
-    oneNationGameweek : FootballTypes.GameweekNumber;
+    playerIds : [FootballIds.PlayerId];
+    captainId : FootballIds.PlayerId;
+    gameweek : GameweekNumber;
+    goalGetterGameweek : GameweekNumber;
+    goalGetterPlayerId : FootballIds.PlayerId;
+    passMasterGameweek : GameweekNumber;
+    passMasterPlayerId : FootballIds.PlayerId;
+    noEntryGameweek : GameweekNumber;
+    noEntryPlayerId : FootballIds.PlayerId;
+    teamBoostGameweek : GameweekNumber;
+    teamBoostClubId : FootballIds.ClubId;
+    safeHandsGameweek : GameweekNumber;
+    safeHandsPlayerId : FootballIds.PlayerId;
+    captainFantasticGameweek : GameweekNumber;
+    captainFantasticPlayerId : FootballIds.PlayerId;
+    oneNationGameweek : GameweekNumber;
     oneNationCountryId : MopsIds.CountryId;
-    prospectsGameweek : FootballTypes.GameweekNumber;
-    braceBonusGameweek : FootballTypes.GameweekNumber;
-    hatTrickHeroGameweek : FootballTypes.GameweekNumber;
+    prospectsGameweek : GameweekNumber;
+    braceBonusGameweek : GameweekNumber;
+    hatTrickHeroGameweek : GameweekNumber;
     points : Int16;
     monthlyPoints : Int16;
     seasonPoints : Int16;
-    transferWindowGameweek : FootballTypes.GameweekNumber;
+    transferWindowGameweek : GameweekNumber;
     month : Base.CalendarMonth;
-    seasonId : FootballTypes.SeasonId;
+    seasonId : FootballIds.SeasonId;
   };
 
   public type LeagueTable = {
-    leagueId : FootballTypes.LeagueId;
-    seasonId : FootballTypes.SeasonId;
+    leagueId : FootballIds.LeagueId;
+    seasonId : FootballIds.SeasonId;
     entries : [LeagueTableEntry];
   };
 
   public type LeagueTableEntry = {
     position : Nat;
-    clubId : FootballTypes.ClubId;
+    clubId : FootballIds.ClubId;
     played : Nat;
     won : Nat;
     drawn : Nat;
