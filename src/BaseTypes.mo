@@ -1,7 +1,6 @@
 import MopsIds "Ids";
-module BaseTypes {
 
-    public type CalendarMonth = Nat8;
+module BaseTypes {
     public type RustResult = { #Ok : Text; #Err : Text };
 
     public type AppStatus = {
