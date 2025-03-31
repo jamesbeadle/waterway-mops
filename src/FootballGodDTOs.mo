@@ -1,21 +1,22 @@
 import FootballTypes "FootballTypes";
 import MopsIds "Ids";
+import FootballIds "FootballIds";
 
 module DTOs {
 
     public type SeasonDTO = {
-        id : FootballTypes.SeasonId;
+        id : FootballIds.SeasonId;
         name : Text;
         year : Nat16;
     };
 
     public type FixtureDTO = {
         id : Nat32;
-        seasonId : FootballTypes.SeasonId;
+        seasonId : FootballIds.SeasonId;
         gameweek : FootballTypes.GameweekNumber;
         kickOff : Int;
-        homeClubId : FootballTypes.ClubId;
-        awayClubId : FootballTypes.ClubId;
+        homeClubId : FootballIds.ClubId;
+        awayClubId : FootballIds.ClubId;
         homeGoals : Nat8;
         awayGoals : Nat8;
         status : FootballTypes.FixtureStatusType;
@@ -24,8 +25,8 @@ module DTOs {
     };
 
     public type PlayerDetailDTO = {
-        id : FootballTypes.PlayerId;
-        clubId : FootballTypes.ClubId;
+        id : FootballIds.PlayerId;
+        clubId : FootballIds.ClubId;
         position : FootballTypes.PlayerPosition;
         firstName : Text;
         lastName : Text;
@@ -33,11 +34,11 @@ module DTOs {
         valueQuarterMillions : Nat16;
         dateOfBirth : Int;
         nationality : MopsIds.CountryId;
-        seasonId : FootballTypes.SeasonId;
+        seasonId : FootballIds.SeasonId;
         gameweeks : [PlayerGameweekDTO];
         valueHistory : [FootballTypes.ValueHistory];
         status : FootballTypes.PlayerStatus;
-        parentClubId : FootballTypes.ClubId;
+        parentClubId : FootballIds.ClubId;
         latestInjuryEndDate : Int;
         injuryHistory : [FootballTypes.InjuryHistory];
         retirementDate : Int;
@@ -47,11 +48,11 @@ module DTOs {
         number : Nat8;
         events : [FootballTypes.PlayerEventData];
         points : Int16;
-        fixtureId : FootballTypes.FixtureId;
+        fixtureId : FootballIds.FixtureId;
     };
 
     public type ClubDTO = {
-        id : FootballTypes.ClubId;
+        id : FootballIds.ClubId;
         name : Text;
         friendlyName : Text;
         primaryColourHex : Text;
@@ -64,7 +65,7 @@ module DTOs {
     public type PlayerScoreDTO = {
         id : Nat16;
         points : Int16;
-        clubId : FootballTypes.ClubId;
+        clubId : FootballIds.ClubId;
         goalsScored : Int16;
         goalsConceded : Int16;
         position : FootballTypes.PlayerPosition;
@@ -79,7 +80,7 @@ module DTOs {
         id : Nat16;
         gameweek : FootballTypes.GameweekNumber;
         points : Int16;
-        clubId : FootballTypes.ClubId;
+        clubId : FootballIds.ClubId;
         position : FootballTypes.PlayerPosition;
         events : [FootballTypes.PlayerEventData];
     };
