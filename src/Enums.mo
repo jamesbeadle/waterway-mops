@@ -2,6 +2,7 @@ module MopsEnums {
 
     public type Error = {
         #NotFound;
+        #TooLong;
         #AlreadyExists;
         #NotAuthorized;
         #NotAllowed;
