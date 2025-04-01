@@ -5,6 +5,14 @@ import Nat32 "mo:base/Nat32";
 
 module {
 
+  public let eqNat = func(a : Nat, b : Nat) : Bool {
+    a == b;
+  };
+
+  public let hashNat = func(key : Nat) : Hash.Hash {
+    Nat32.fromNat(key % (2 ** 8 - 1));
+  };
+
   public let eqNat8 = func(a : Nat8, b : Nat8) : Bool {
     a == b;
   };
