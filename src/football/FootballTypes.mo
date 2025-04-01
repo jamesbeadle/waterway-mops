@@ -1,4 +1,3 @@
-import Base "../BaseTypes";
 import Enums "../Enums";
 import List "mo:base/List";
 import MopsIds "../Ids";
