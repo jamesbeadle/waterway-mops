@@ -21,6 +21,8 @@ module MopsEnums {
         #InEligible;
         #NeuronAlreadyUsed;
         #FailedInterCanisterCall;
+        #NoPacketsRemaining;
+        #InsufficientPacketsRemaining;
     };
 
     public type EntryRequirement = {
