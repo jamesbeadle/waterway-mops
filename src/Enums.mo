@@ -4,6 +4,7 @@ module MopsEnums {
         #NotFound;
         #TooLong;
         #AlreadyExists;
+        #AlreadyClaimed;
         #NotAuthorized;
         #NotAllowed;
         #DecodeError;
@@ -15,6 +16,10 @@ module MopsEnums {
         #MaxDataExceeded;
         #InvalidProperty;
         #InsufficientFunds;
+        #UpdateFailed;
+        #InvalidProfilePicture;
+        #InEligible;
+        #NeuronAlreadyUsed;
         #FailedInterCanisterCall;
     };
 
