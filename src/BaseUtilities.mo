@@ -2,6 +2,7 @@ import Hash "mo:base/Hash";
 import Nat8 "mo:base/Nat8";
 import Nat16 "mo:base/Nat16";
 import Nat32 "mo:base/Nat32";
+import Text "mo:base/Text";
 
 module {
 
@@ -35,6 +36,15 @@ module {
 
   public let hashNat32 = func(key : Nat32) : Hash.Hash {
     Nat32.fromNat(Nat32.toNat(key) % (2 ** 32 - 1));
+  };
+
+  public func toLowercase(s : Text) : Text {
+    let lower = Text.toLowercase(s);
+    if (Text.equal(s, lower)) {
+      return s;
+    } else {
+      return lower;
+    };
   };
 
 };
