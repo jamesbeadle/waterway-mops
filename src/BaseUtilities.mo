@@ -3,6 +3,7 @@ import Nat8 "mo:base/Nat8";
 import Nat16 "mo:base/Nat16";
 import Nat32 "mo:base/Nat32";
 import Text "mo:base/Text";
+import Char "mo:base/Char";
 
 module {
 
@@ -38,13 +39,15 @@ module {
     Nat32.fromNat(Nat32.toNat(key) % (2 ** 32 - 1));
   };
 
-  public func toLowercase(s : Text) : Text {
-    let lower = Text.toLowercase(s);
-    if (Text.equal(s, lower)) {
-      return s;
-    } else {
-      return lower;
+  public func toLowercase(t : Text.Text) : Text.Text {
+    func charToLower(c : Char) : Char {
+      if (Char.isUppercase(c)) {
+        Char.fromNat32(Char.toNat32(c) + 32);
+      } else {
+        c;
+      };
     };
+    Text.map(t, charToLower);
   };
 
 };
