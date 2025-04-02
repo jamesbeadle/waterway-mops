@@ -18,7 +18,6 @@ module CanisterIds {
     public let CYCLES_MINTING_CANISTER_ID = "rkp4c-7iaaa-aaaaa-aaaca-cai";
     public let NNS_GOVERNANCE_CANISTER_ID = "rrkah-fqaaa-aaaaa-aaaaq-cai";
     public let NNS_LEDGER_CANISTER_ID = "ryjl3-tyaaa-aaaaa-aaaba-cai";
-    public let ICP_COINS_CANISTER_ID = "u45jl-liaaa-aaaam-abppa-cai";
     
     public let NEURON_CONTROLLER_CANISTER_ID = "hqfmc-cqaaa-aaaal-qitcq-cai";
     public let WATERWAY_LABS_BACKEND_CANISTER_ID = "rbqtt-7yaaa-aaaal-qcndq-cai";
