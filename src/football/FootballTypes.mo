@@ -46,6 +46,18 @@ module FootballTypes {
     shirtType : FootballEnums.ShirtType;
   };
 
+  public type FootballClub = {
+    id : FootballIds.ClubId;
+    name : Text;
+    friendlyName : Text;
+    gender: Enums.Gender;
+    primaryColourHex : Text;
+    secondaryColourHex : Text;
+    thirdColourHex : Text;
+    abbreviatedName : Text;
+    shirtType : FootballEnums.ShirtType;
+  };
+
   public type Fixture = {
     id : FootballIds.FixtureId;
     seasonId : FootballIds.SeasonId;
