@@ -54,20 +54,38 @@ module {
         Array.equal(beBytes(crc32), checksumPart, Nat8.equal);
     };
 
-    public func principalToSubaccount(principal : Principal) : Blob {
-        let idHash = SHA224.Digest();
-        idHash.write(Blob.toArray(Principal.toBlob(principal)));
-        let hashSum = idHash.sum();
-        let crc32Bytes = beBytes(CRC32.ofArray(hashSum));
+    // public func principalToSubaccount(principal : Principal) : Blob {
+    //     let idHash = SHA224.Digest();
+    //     idHash.write(Blob.toArray(Principal.toBlob(principal)));
+    //     let hashSum = idHash.sum();
+    //     let crc32Bytes = beBytes(CRC32.ofArray(hashSum));
 
-        let buffer = Buffer.fromArray<Nat8>(crc32Bytes);
-        for (x in hashSum.vals()) {
-            buffer.add(x);
+    //     let buffer = Buffer.fromArray<Nat8>(crc32Bytes);
+    //     for (x in hashSum.vals()) {
+    //         buffer.add(x);
+    //     };
+
+    //     let blob = Blob.fromArray(Buffer.toArray(buffer));
+
+    //     return blob;
+    // };
+
+    public func principalToSubaccount(principal : Principal) : Blob {
+        let principalBytes = Blob.toArray(Principal.toBlob(principal));
+        let subAccount = Array.init<Nat8>(32, 0);
+
+        subAccount[0] := Nat8.fromNat(principalBytes.size());
+
+        var i = 1;
+        for (b in principalBytes.vals()) {
+            if (i < 32) {
+                subAccount[i] := b;
+                i += 1;
+            };
         };
 
-        let blob = Blob.fromArray(Buffer.toArray(buffer));
-
-        return blob;
+        let resultArray = Array.freeze(subAccount);
+        Blob.fromArray(resultArray);
     };
 
 };
