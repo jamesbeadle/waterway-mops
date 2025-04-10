@@ -6,23 +6,6 @@ import Text "mo:base/Text";
 
 module {
 
-  public func getCanisterStatus_(a : actor {}, backendCanisterController : ?Principal, IC : Management.Management) : async ?Management.canister_status_result {
-    let cid = { canister_id = Principal.fromActor(a) };
-    switch (backendCanisterController) {
-      case (null) {
-        return null;
-      };
-      case (?_) {
-        let result = await (
-          IC.canister_status({
-            canister_id = cid.canister_id;
-          })
-        );
-        return ?result;
-      };
-    };
-  };
-
   public func updateCanister_(a : actor {}, backendCanisterController : ?Principal, IC : Management.Management) : async () {
     let cid = { canister_id = Principal.fromActor(a) };
     switch (backendCanisterController) {
@@ -61,6 +44,16 @@ module {
         canister_id = cid.canister_id;
       })
     );
+  };
+
+  public func getCanisterStatus_(a : actor {}, IC : Management.Management) : async ?Management.canister_status_result {
+    let cid = { canister_id = Principal.fromActor(a) };
+    let result = await (
+      IC.canister_status({
+        canister_id = cid.canister_id;
+      })
+    );
+    return ?result;
   };
 
 };

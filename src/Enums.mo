@@ -50,4 +50,14 @@ module MopsEnums {
         #Female;
     };
 
+    public type LogEntryType = {
+        #Warning;
+        #Error;
+        #Information;
+        #Success;
+        #SystemCheck;
+        #CanisterTopup;
+        #CanisterCreated;
+    };
+
 };

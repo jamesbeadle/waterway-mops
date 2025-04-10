@@ -1,4 +1,5 @@
 import MopsIds "Ids";
+import Enums "Enums";
 
 module BaseTypes {
     public type RustResult = { #Ok : Text; #Err : Text };
@@ -49,5 +50,13 @@ module BaseTypes {
         id : Int;
         triggerTime : Int;
         callbackName : Text;
+    };
+
+    public type ApplicationLog = {
+        id : MopsIds.ApplicationLogId;
+        createdOn : Int;
+        logType : Enums.LogEntryType;
+        title : Text;
+        detail : Text;
     };
 };
