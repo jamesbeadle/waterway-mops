@@ -44,6 +44,11 @@ module MopsEnums {
         #Static;
         #Dynamic;
     };
+    public type CanisterStatus = {
+        #stopped;
+        #stopping;
+        #running;
+    };
 
     public type Gender = {
         #Male;
