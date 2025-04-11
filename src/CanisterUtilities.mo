@@ -20,6 +20,8 @@ module {
               memory_allocation = null;
               freezing_threshold = ?2_592_000;
               reserved_cycles_limit = null;
+              log_visibility = null;
+              wasm_memory_limit = null;
             };
             sender_canister_version = null;
           })
@@ -46,7 +48,7 @@ module {
     );
   };
 
-  public func getCanisterStatus_(a : actor {}, IC : Management.Management) : async ?Management.canister_status_result {
+  public func getCanisterStatus_(a : actor {}, IC : Management.Management) : async ?Management.CanisterStatusResult {
     let cid = { canister_id = Principal.fromActor(a) };
     let result = await (
       IC.canister_status({
