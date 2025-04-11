@@ -48,4 +48,12 @@ module FootballEnums {
         #Finalised;
     };
 
+    public type App = {
+        #ICFC;
+        #OpenFPL;
+        #OpenWSL;
+        #JeffBets;
+        #TransferKings;
+    };
+
 };
