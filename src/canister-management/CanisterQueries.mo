@@ -24,4 +24,14 @@ module CanisterQueries {
     public type ProjectCanisters = {
         entries : [CanisterInfo];
     };
+
+    public type ListCanisterSnapshots = {
+        canisterId : Ids.CanisterId;
+    };
+
+    public type CanisterSnapshot = {
+        id : Blob;
+        total_size : Nat64;
+        taken_at_timestamp : Nat64;
+    };
 };
