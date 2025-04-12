@@ -7,4 +7,4 @@ keywords = [ "footbal-types", "base-types" ]
 license = "Apache-2.0"
 
 [dependencies]
-base = "0.14.5"
+base = "0.14.7"
