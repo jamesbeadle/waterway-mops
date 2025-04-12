@@ -31,6 +31,7 @@ module CanisterQueries {
     };
 
     public type ListCanisterSnapshots = {
+        app : Enums.WaterwayLabsApp;
         canisterId : Ids.CanisterId;
     };
 
