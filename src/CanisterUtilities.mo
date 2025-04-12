@@ -42,9 +42,12 @@ module {
 
   public func topup_canister_(a : actor {}, IC : Management.Management, cycles : Nat) : async () {
     let cid = { canister_id = Principal.fromActor(a) };
-    await (with cycles = cycles) IC.deposit_cycles({
-      canister_id = cid.canister_id;
-    });
+    Cycles.add<system>(cycles);
+    await (
+      IC.deposit_cycles({
+        canister_id = cid.canister_id;
+      })
+    );
   };
 
   public func getCanisterStatus_(a : actor {}, IC : Management.Management) : async ?Management.CanisterStatusResult {
