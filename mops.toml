@@ -1,6 +1,6 @@
 [package]
 name = "waterway-mops"
-version = "2.4.2"
+version = "2.4.3"
 description = "Types used across Waterway Labs Products"
 repository = "https://github.com/jamesbeadle/waterway-mops"
 keywords = [ "footbal-types", "base-types" ]
