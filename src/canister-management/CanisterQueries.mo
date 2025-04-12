@@ -2,6 +2,11 @@ import Enums "../Enums";
 import Ids "../Ids";
 
 module CanisterQueries {
+
+    public type GetProjectCanisters = {
+        app : Enums.WaterwayLabsApp;
+    };
+
     public type CanisterInfo = {
         app : Enums.WaterwayLabsApp;
         canisterName : Text;
