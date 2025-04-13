@@ -163,7 +163,7 @@ module {
                 transferCycles : (dto : CanisterCommands.TopupCanister) -> async Result.Result<(), Enums.Error>;
             };
             let canisterStatusResult = await CanisterUtilities.getCanisterStatus_(canister_actor, IC);
-            let wwlCanisterId = "";
+            let wwlCanisterId = "be2us-64aaa-aaaaa-qaabq-cai";
 
             switch (canisterStatusResult) {
                 case (?canisterStatus) {
