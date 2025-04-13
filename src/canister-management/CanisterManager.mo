@@ -178,27 +178,25 @@ module {
                         });
 
                         switch (result) {
-                            case (#ok()) {
-                                let result = await CanisterUtilities.deleteCanister_(dto.canisterId, IC);
-                                switch (result) {
-                                    case () {
-                                        return #ok(());
-                                    };
-                                };
-                            };
+                            case (#ok()) {};
                             case (#err(err)) {
                                 return #err(err);
                             };
                         };
-                    } else {
-                        let result = await CanisterUtilities.deleteCanister_(dto.canisterId, IC);
-                        switch (result) {
-                            case () {
-                                return #ok(());
-                            };
-                        };
                     };
 
+                    let result = await CanisterUtilities.stopCanister_(canister_actor, IC);
+                    switch (result) {
+                        case () {
+                            let result1 = await CanisterUtilities.deleteCanister_(dto.canisterId, IC);
+                            switch (result1) {
+                                case () {
+                                    return #ok(());
+                                };
+                            };
+
+                        };
+                    };
                 };
                 case (null) {
                     return #err(#NotFound);
