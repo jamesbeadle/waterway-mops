@@ -127,10 +127,20 @@ module {
         public func loadCanisterSnapshot(dto : CanisterCommands.LoadCanisterSnapshot) : async Result.Result<(), Enums.Error> {
             let IC : Management.Management = actor (CanisterIds.Default);
             let canister_actor = actor (dto.canisterId) : actor {};
-            let result = await CanisterUtilities.loadCanisterSnapshot_(canister_actor, IC, dto.snapshotId);
-            switch (result) {
+            let result1 = await CanisterUtilities.stopCanister_(canister_actor, IC);
+            switch (result1) {
                 case () {
-                    return #ok(());
+                    let result2 = await CanisterUtilities.loadCanisterSnapshot_(canister_actor, IC, dto.snapshotId);
+                    switch (result2) {
+                        case () {
+                            let result3 = await CanisterUtilities.startCanister_(canister_actor, IC);
+                            switch (result3) {
+                                case () {
+                                    return #ok(());
+                                };
+                            };
+                        };
+                    };
                 };
             };
         };
@@ -148,12 +158,53 @@ module {
 
         public func deleteCanister(dto : CanisterCommands.DeleteCanister) : async Result.Result<(), Enums.Error> {
             let IC : Management.Management = actor (CanisterIds.Default);
-            let result = await CanisterUtilities.deleteCanister_(dto.canisterId, IC);
-            switch (result) {
-                case () {
-                    return #ok(());
+            // fetch the canister status
+            let canister_actor = actor (dto.canisterId) : actor {
+                transferCycles : (dto : CanisterCommands.TopupCanister) -> async Result.Result<(), Enums.Error>;
+            };
+            let canisterStatusResult = await CanisterUtilities.getCanisterStatus_(canister_actor, IC);
+            let wwlCanisterId = "";
+
+            switch (canisterStatusResult) {
+                case (?canisterStatus) {
+                    // get the cycles of the canister to wwlCanister
+                    var cycles = canisterStatus.cycles;
+                    if (cycles > 300_000_000) {
+                        cycles := cycles - 300_000_000;
+                        let result = await canister_actor.transferCycles({
+                            app = dto.app;
+                            canisterId = wwlCanisterId;
+                            cycles = cycles;
+                        });
+
+                        switch (result) {
+                            case (#ok()) {
+                                let result = await CanisterUtilities.deleteCanister_(dto.canisterId, IC);
+                                switch (result) {
+                                    case () {
+                                        return #ok(());
+                                    };
+                                };
+                            };
+                            case (#err(err)) {
+                                return #err(err);
+                            };
+                        };
+                    } else {
+                        let result = await CanisterUtilities.deleteCanister_(dto.canisterId, IC);
+                        switch (result) {
+                            case () {
+                                return #ok(());
+                            };
+                        };
+                    };
+
+                };
+                case (null) {
+                    return #err(#NotFound);
                 };
             };
+
         };
 
         public func listCanisterSnapshots(dto : CanisterQueries.ListCanisterSnapshots) : async Result.Result<[CanisterQueries.CanisterSnapshot], Enums.Error> {
