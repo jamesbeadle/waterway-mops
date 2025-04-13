@@ -169,8 +169,8 @@ module {
                 case (?canisterStatus) {
                     // get the cycles of the canister to wwlCanister
                     var cycles = canisterStatus.cycles;
-                    if (cycles > 300_000_000) {
-                        cycles := cycles - 300_000_000;
+                    if (cycles > 100_000) {
+                        cycles := cycles - 100_000;
                         let result = await canister_actor.transferCycles({
                             app = dto.app;
                             canisterId = wwlCanisterId;
