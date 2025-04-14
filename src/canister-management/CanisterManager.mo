@@ -42,6 +42,8 @@ module {
                         memoryAllocation = canisterStatus.settings.memory_allocation;
                         memoryUsage = canisterStatus.memory_size;
                         canisterStatus = canisterStatus.status;
+                        idleCyclesBurnedPerDay = canisterStatus.idle_cycles_burned_per_day;
+
                     });
 
                 };

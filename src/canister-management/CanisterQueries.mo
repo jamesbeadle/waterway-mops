@@ -19,6 +19,7 @@ module CanisterQueries {
         memoryUsage : Nat;
         canisterType : Enums.CanisterType;
         canisterStatus : Enums.CanisterStatus;
+        idleCyclesBurnedPerDay : Nat;
     };
     public type GetCanisterInfo = {
         canisterId : Ids.CanisterId;
