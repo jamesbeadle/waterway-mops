@@ -163,14 +163,14 @@ module {
                 transferCycles : (dto : CanisterCommands.TopupCanister) -> async Result.Result<(), Enums.Error>;
             };
             let canisterStatusResult = await CanisterUtilities.getCanisterStatus_(canister_actor, IC);
-            let wwlCanisterId = "rbqtt-7yaaa-aaaal-qcndq-cai";
+            let wwlCanisterId = CanisterIds.WATERWAY_LABS_BACKEND_CANISTER_ID;
 
             switch (canisterStatusResult) {
                 case (?canisterStatus) {
                     // get the cycles of the canister to wwlCanister
                     var cycles = canisterStatus.cycles;
-                    if (cycles > 100_000) {
-                        cycles := cycles - 100_000;
+                    if (cycles > 3_000_000_000_000) {
+                        cycles := cycles - 3_000_000_000_000;
                         let result = await canister_actor.transferCycles({
                             app = dto.app;
                             canisterId = wwlCanisterId;
