@@ -33,8 +33,6 @@ module {
                     return #ok({
                         app = app;
                         canisterId = dto.canisterId;
-                        canisterName = dto.canisterName;
-                        canisterType = dto.canisterType;
                         cycles = canisterStatus.cycles;
                         computeAllocation = canisterStatus.settings.compute_allocation;
                         controllers = controllers;

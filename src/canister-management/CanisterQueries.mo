@@ -9,7 +9,6 @@ module CanisterQueries {
 
     public type CanisterInfo = {
         app : Enums.WaterwayLabsApp;
-        canisterName : Text;
         canisterId : Ids.CanisterId;
         cycles : Nat;
         computeAllocation : Nat;
@@ -17,7 +16,6 @@ module CanisterQueries {
         memoryAllocation : Nat;
         controllers : [Ids.PrincipalId];
         memoryUsage : Nat;
-        canisterType : Enums.CanisterType;
         canisterStatus : Enums.CanisterStatus;
         idleCyclesBurnedPerDay : Nat;
     };
@@ -31,8 +29,7 @@ module CanisterQueries {
     
     public type GetCanisterInfo = {
         canisterId : Ids.CanisterId;
-        canisterType : Enums.CanisterType;
-        canisterName : Text;
+        app : Enums.WaterwayLabsApp;
     };
 
     public type ProjectCanisters = {
