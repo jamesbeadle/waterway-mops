@@ -21,6 +21,14 @@ module CanisterQueries {
         canisterStatus : Enums.CanisterStatus;
         idleCyclesBurnedPerDay : Nat;
     };
+
+    public type Canister = {
+        app : Enums.WaterwayLabsApp;
+        canisterName : Text;
+        canisterId : Ids.CanisterId;
+        canisterType : Enums.CanisterType;
+    };
+    
     public type GetCanisterInfo = {
         canisterId : Ids.CanisterId;
         canisterType : Enums.CanisterType;
@@ -28,7 +36,7 @@ module CanisterQueries {
     };
 
     public type ProjectCanisters = {
-        entries : [CanisterInfo];
+        entries : [Canister];
     };
 
     public type ListCanisterSnapshots = {
