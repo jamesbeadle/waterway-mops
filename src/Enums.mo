@@ -80,6 +80,7 @@ module MopsEnums {
         #OpenChef;
         #ICPCasino;
         #OpenCare;
+        #OpenBeats;
     };
 
 };
