@@ -12,7 +12,7 @@ actor class _DeleteCanisterDefinition() {
         assert Principal.toText(caller) == CanisterIds.WATERWAY_LABS_BACKEND_CANISTER_ID;
 
         let IC : Management.Management = actor (CanisterIds.Default);
-        let canister_actor = actor (dto.canisterId) : actor {};
+        let canister_actor = actor (CanisterIds.WATERWAY_LABS_BACKEND_CANISTER_ID) : actor {};
         let result = await CanisterUtilities.topup_canister_(canister_actor, IC, dto.cycles);
         switch (result) {
             case (()) {

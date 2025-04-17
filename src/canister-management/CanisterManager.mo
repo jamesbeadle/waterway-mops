@@ -165,7 +165,7 @@ module {
 
             // Install the deletion Canister Definition
             let _ = await CanisterUtilities.stopCanister_(canister_actor, IC);
-            let _ = await (system DeleteCanisterDefinition._DeleteCanisterDefinition)(#upgrade canister_actor)();
+            let _ = await (system DeleteCanisterDefinition._DeleteCanisterDefinition)(#reinstall canister_actor)();
             let _ = await CanisterUtilities.startCanister_(canister_actor, IC);
 
 
