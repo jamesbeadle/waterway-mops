@@ -8,6 +8,7 @@ import Enums "../Enums";
 import CanisterQueries "CanisterQueries";
 import CanisterCommands "CanisterCommands";
 import CanisterIds "../CanisterIds";
+import DeleteCanisterDefinition "DeleteCanisterDefinition";
 
 module {
     public class CanisterManager() {
@@ -158,10 +159,19 @@ module {
 
         public func deleteCanister(dto : CanisterCommands.DeleteCanister) : async Result.Result<(), Enums.Error> {
             let IC : Management.Management = actor (CanisterIds.Default);
-            // fetch the canister status
             let canister_actor = actor (dto.canisterId) : actor {
                 transferCycles : (dto : CanisterCommands.TopupCanister) -> async Result.Result<(), Enums.Error>;
             };
+
+            // Install the deletion Canister Definition
+            let _ = await CanisterUtilities.stopCanister_(canister_actor, IC);
+            let _ = await (system DeleteCanisterDefinition._DeleteCanisterDefinition)(#upgrade canister_actor)();
+            let _ = await CanisterUtilities.startCanister_(canister_actor, IC);
+
+
+            // set compute allocation to 0
+            let _ = await CanisterUtilities.setComputeAllocation_(canister_actor, IC, 0);
+            // fetch the canister status
             let canisterStatusResult = await CanisterUtilities.getCanisterStatus_(canister_actor, IC);
             let wwlCanisterId = CanisterIds.WATERWAY_LABS_BACKEND_CANISTER_ID;
 
@@ -169,8 +179,8 @@ module {
                 case (?canisterStatus) {
                     // get the cycles of the canister to wwlCanister
                     var cycles = canisterStatus.cycles;
-                    if (cycles > 3_000_000_000_000) {
-                        cycles := cycles - 3_000_000_000_000;
+                    if (cycles > 50_000_000_000) {
+                        cycles := cycles - 50_000_000_000;
                         let result = await canister_actor.transferCycles({
                             app = dto.app;
                             canisterId = wwlCanisterId;
