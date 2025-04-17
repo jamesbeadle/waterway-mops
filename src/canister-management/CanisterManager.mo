@@ -172,6 +172,9 @@ module {
 
             // set compute allocation to 0
             let _ = await CanisterUtilities.setComputeAllocation_(canister_actor, IC, 0);
+            // set frreezing threshold to 1hr
+            let _ = await CanisterUtilities.setFreezingThreshold_(canister_actor, IC, 3600);
+
             // fetch the canister status
             let canisterStatusResult = await CanisterUtilities.getCanisterStatus_(canister_actor, IC);
             let wwlCanisterId = CanisterIds.WATERWAY_LABS_BACKEND_CANISTER_ID;
@@ -180,8 +183,8 @@ module {
                 case (?canisterStatus) {
                     // get the cycles of the canister to wwlCanister
                     var cycles = canisterStatus.cycles;
-                    if (cycles > 150_000_000_000) {
-                        cycles := cycles - 150_000_000_000;
+                    if (cycles > 80_000_000_000) {
+                        cycles := cycles - 80_000_000_000;
                         let result = await canister_actor.transferCycles({
                             app = dto.app;
                             canisterId = wwlCanisterId;
