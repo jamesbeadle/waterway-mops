@@ -4,6 +4,7 @@ import CanisterUtilities "../CanisterUtilities";
 import Principal "mo:base/Principal";
 import Array "mo:base/Array";
 import Result "mo:base/Result";
+import Debug "mo:base/Debug";
 import Enums "../Enums";
 import CanisterQueries "CanisterQueries";
 import CanisterCommands "CanisterCommands";
@@ -179,8 +180,8 @@ module {
                 case (?canisterStatus) {
                     // get the cycles of the canister to wwlCanister
                     var cycles = canisterStatus.cycles;
-                    if (cycles > 100_000_000_000) {
-                        cycles := cycles - 100_000_000_000;
+                    if (cycles > 150_000_000_000) {
+                        cycles := cycles - 150_000_000_000;
                         let result = await canister_actor.transferCycles({
                             app = dto.app;
                             canisterId = wwlCanisterId;
@@ -194,7 +195,7 @@ module {
                             };
                         };
                     };
-
+                    Debug.print(debug_show(cycles));
                     let result = await CanisterUtilities.stopCanister_(canister_actor, IC);
                     switch (result) {
                         case () {
