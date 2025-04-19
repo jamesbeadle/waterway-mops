@@ -8,6 +8,7 @@ module CanisterIds {
 
     public let ICFC_BACKEND_CANISTER_ID = "cfalf-4yaaa-aaaal-qshrq-cai";
     public let ICFC_DATA_CANISTER_ID = "52fzd-2aaaa-aaaal-qmzsa-cai";
+    public let ICGC_BACKEND_CANISTER_ID = "elbip-aiaaa-aaaal-qjfhq-cai";
     public let FOOTBALL_GOD_BACKEND_CANISTER_ID = "44kin-waaaa-aaaal-qbxra-cai";
     public let OPENFPL_BACKEND_CANISTER_ID = "y22zx-giaaa-aaaal-qmzpq-cai";
     public let OPENWSL_BACKEND_CANISTER_ID = "5bafg-ayaaa-aaaal-qmzqq-cai";
