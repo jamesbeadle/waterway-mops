@@ -83,4 +83,8 @@ module MopsEnums {
         #OpenBeats;
     };
 
+    public type WaterwayLabsToken = {
+        #ICFC;
+    }
+
 };
