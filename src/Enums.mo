@@ -85,6 +85,11 @@ module MopsEnums {
 
     public type WaterwayLabsToken = {
         #ICFC;
-    }
+    };
+
+    public type PayoutStatus = {
+        #Pending;
+        #Paid;
+    };
 
 };
