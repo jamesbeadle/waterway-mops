@@ -23,6 +23,11 @@ module PayoutCommands = {
         gameweek : FootballDefinitions.GameweekNumber;
         payoutStatus : Enums.PayoutStatus;
         payoutDate : ?Int;
-    }
+    };
+
+    public type CompleteLeaderboardPayout = {
+        seasonId : FootballIds.SeasonId;
+        gameweek : FootballDefinitions.GameweekNumber;
+    };
 
 };
