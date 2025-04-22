@@ -2,6 +2,7 @@ import Enums "../Enums";
 import Ids "../Ids";
 import FootballDefinitions "FootballDefinitions";
 import FootballIds "FootballIds";
+import Text "mo:base/Text";
 
 module PayoutCommands = {
     public type LeaderboardPayoutRequest = {
@@ -9,7 +10,7 @@ module PayoutCommands = {
         entries : [LeaderboardEntry];
         gameweek : FootballDefinitions.GameweekNumber;
         seasonId : FootballIds.SeasonId;
-        token : Enums.WaterwayLabsToken;
+        token : Text;
     };
 
     public type LeaderboardEntry = {

@@ -2,6 +2,7 @@ import FootballDefinitions "football/FootballDefinitions";
 import FootballIds "football/FootballIds";
 import Enums "Enums";
 import LeaderboardPayoutCommands "football/LeaderboardPayoutCommands";
+import Text "mo:base/Text";
 
 
 module ICFCTypes {
@@ -14,5 +15,6 @@ module ICFCTypes {
         payoutDate : ?Int;
         app: Enums.WaterwayLabsApp;
         entries : [LeaderboardPayoutCommands.LeaderboardEntry];
+        token : Text;
     };
 };

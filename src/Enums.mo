@@ -85,6 +85,7 @@ module MopsEnums {
 
     public type WaterwayLabsToken = {
         #ICFC;
+        #Unknown;
     };
 
     public type PayoutStatus = {

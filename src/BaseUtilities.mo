@@ -12,6 +12,7 @@ import Iter "mo:base/Iter";
 import Int64 "mo:base/Int64";
 import FootballTypes "football/FootballTypes";
 import FootballEnums "football/FootballEnums";
+import Enums "Enums";
 
 module {
 
@@ -277,6 +278,20 @@ module {
 
   public func natToInt(input : Nat) : Int {
     return Int64.toInt(Int64.fromNat64(Nat64.fromNat(input)));
+  };
+
+  public func tokenToText(token : Enums.WaterwayLabsToken) : Text {
+    switch (token) {
+      case (#ICFC) { return "ICFC" };
+      case (_) { return "" };
+    };
+  };
+
+  public func textToToken(token : Text) : Enums.WaterwayLabsToken {
+    switch (token) {
+      case ("ICFC") { return #ICFC };
+      case (_) { return #Unknown };
+    };
   };
 
 };
