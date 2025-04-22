@@ -64,4 +64,19 @@ module CanisterQueries {
         eventTitle : Text;
         eventDetail : Text;
     };
+
+    public type CanisterLogRecord = {
+        idx : Nat64;
+        timestamp_nanos : Nat64;
+        content : Blob;
+    };
+
+    public type GetCanisterLogs = {
+        canisterId : Ids.CanisterId;
+        app : Enums.WaterwayLabsApp;
+    };
+
+    public type CanisterLogs = {
+        canister_log_records : [CanisterLogRecord];
+    };
 };

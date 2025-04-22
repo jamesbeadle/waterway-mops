@@ -182,4 +182,10 @@ module {
         let _ = await CanisterUtilities.stopCanister_(canister_actor, IC);
         return #ok(());
     };
+
+    public func getCanisterLogs(dto : CanisterQueries.GetCanisterLogs) : async Result.Result<CanisterQueries.CanisterLogs, Enums.Error> {
+        let IC : Management.Management = actor (CanisterIds.Default);
+        let result = await CanisterUtilities.getCanisterLogs_(dto.canisterId, IC);
+        return #ok(result);
+    };
 };

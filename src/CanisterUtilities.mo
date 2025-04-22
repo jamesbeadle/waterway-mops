@@ -5,6 +5,8 @@ import Principal "mo:base/Principal";
 import Text "mo:base/Text";
 import Array "mo:base/Array";
 import CanisterCommands "canister-management/CanisterCommands";
+import CanisterQueries "canister-management/CanisterQueries";
+import Ids "Ids";
 
 module {
 
@@ -226,11 +228,20 @@ module {
     );
   };
 
-  public func listCanisterSnapshots_(a : actor {}, IC : Management.Management) : async [CanisterCommands.CanisterSnapshot] {
+  public func listCanisterSnapshots_(a : actor {}, IC : Management.Management) : async [CanisterQueries.CanisterSnapshot] {
     let cid = { canister_id = Principal.fromActor(a) };
     let result = await (
       IC.list_canister_snapshots({
         canister_id = cid.canister_id;
+      })
+    );
+    return result;
+  };
+
+  public func getCanisterLogs_(canisterId : Ids.CanisterId, IC : Management.Management) : async CanisterQueries.CanisterLogs {
+    let result = await (
+      IC.fetch_canister_logs({
+        canister_id = Principal.fromText(canisterId);
       })
     );
     return result;
