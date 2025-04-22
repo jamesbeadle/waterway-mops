@@ -13,6 +13,7 @@ import Int64 "mo:base/Int64";
 import FootballTypes "football/FootballTypes";
 import FootballEnums "football/FootballEnums";
 import Enums "Enums";
+import CanisterIds "CanisterIds";
 
 module {
 
@@ -291,6 +292,28 @@ module {
     switch (token) {
       case ("ICFC") { return #ICFC };
       case (_) { return #Unknown };
+    };
+  };
+
+  public func getAppCanisterId(app : Enums.WaterwayLabsApp) : ?Text {
+    switch (app) {
+      case (#ICFC) { return ?CanisterIds.ICFC_BACKEND_CANISTER_ID };
+      case (#WaterwayLabs) {
+        return ?CanisterIds.WATERWAY_LABS_BACKEND_CANISTER_ID;
+      };
+      case (#FootballGod) {
+        return ?CanisterIds.FOOTBALL_GOD_BACKEND_CANISTER_ID;
+      };
+      case (#OpenFPL) { return ?CanisterIds.OPENFPL_BACKEND_CANISTER_ID };
+      case (#OpenWSL) { return ?CanisterIds.OPENWSL_BACKEND_CANISTER_ID };
+      case (#TransferKings) {
+        return ?CanisterIds.TRANSFER_KINGS_BACKEND_CANISTER_ID;
+      };
+      case (#JeffBets) { return ?CanisterIds.JEFF_BETS_BACKEND_CANISTER_ID };
+      case (#ICGC) { return ?CanisterIds.ICGC_BACKEND_CANISTER_ID };
+      case (#ICF1) { return ?CanisterIds.ICF1_BACKEND_CANISTER_ID };
+      case (#OpenBook) { return ?CanisterIds.OPENBOOK_BACKEND_CANISTER_ID };
+      case (_) { return null};
     };
   };
 
