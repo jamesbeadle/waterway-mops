@@ -26,7 +26,7 @@ module CanisterQueries {
         canisterId : Ids.CanisterId;
         canisterType : Enums.CanisterType;
     };
-    
+
     public type GetCanisterInfo = {
         canisterId : Ids.CanisterId;
         app : Enums.WaterwayLabsApp;
@@ -45,5 +45,23 @@ module CanisterQueries {
         id : Blob;
         total_size : Nat64;
         taken_at_timestamp : Nat64;
+    };
+
+    public type GetApplicationLogs = {
+        app : Enums.WaterwayLabsApp;
+    };
+
+    public type ApplicationLogs = {
+        app : Enums.WaterwayLabsApp;
+        logs : [SystemEvent];
+        totalEntries : Nat;
+    };
+
+    public type SystemEvent = {
+        eventId : Nat;
+        eventTime : Int;
+        eventType : Enums.LogEntryType;
+        eventTitle : Text;
+        eventDetail : Text;
     };
 };
