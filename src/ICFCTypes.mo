@@ -11,10 +11,8 @@ module ICFCTypes {
     public type PayoutRequest = {
         seasonId : FootballIds.SeasonId;
         gameweek : FootballDefinitions.GameweekNumber;
-        payoutStatus : Enums.PayoutStatus;
-        payoutDate : ?Int;
         app: Enums.WaterwayLabsApp;
-        entries : [LeaderboardPayoutCommands.LeaderboardEntry];
+        leaderboard : [LeaderboardPayoutCommands.LeaderboardEntry];
         token : Text;
     };
 };
