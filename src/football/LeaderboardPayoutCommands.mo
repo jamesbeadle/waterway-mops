@@ -11,6 +11,8 @@ module PayoutCommands = {
         gameweek : FootballDefinitions.GameweekNumber;
         seasonId : FootballIds.SeasonId;
         token : Text;
+        totalEntries : Nat;
+        totalPaid : Nat;
     };
 
     public type LeaderboardEntry = {
