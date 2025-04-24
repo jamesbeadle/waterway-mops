@@ -46,37 +46,4 @@ module CanisterQueries {
         total_size : Nat64;
         taken_at_timestamp : Nat64;
     };
-
-    public type GetApplicationLogs = {
-        app : Enums.WaterwayLabsApp;
-    };
-
-    public type ApplicationLogs = {
-        app : Enums.WaterwayLabsApp;
-        logs : [SystemEvent];
-        totalEntries : Nat;
-    };
-
-    public type SystemEvent = {
-        eventId : Nat;
-        eventTime : Int;
-        eventType : Enums.LogEntryType;
-        eventTitle : Text;
-        eventDetail : Text;
-    };
-
-    public type CanisterLogRecord = {
-        idx : Nat64;
-        timestamp_nanos : Nat64;
-        content : Blob;
-    };
-
-    public type GetCanisterLogs = {
-        canisterId : Ids.CanisterId;
-        app : Enums.WaterwayLabsApp;
-    };
-
-    public type CanisterLogs = {
-        canister_log_records : [CanisterLogRecord];
-    };
 };

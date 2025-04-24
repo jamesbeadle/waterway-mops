@@ -53,10 +53,12 @@ module BaseTypes {
     };
 
     public type ApplicationLog = {
+        app : Enums.WaterwayLabsApp;
         id : MopsIds.ApplicationLogId;
         createdOn : Int;
         logType : Enums.LogEntryType;
         title : Text;
         detail : Text;
+        error : ?Enums.Error;
     };
 };

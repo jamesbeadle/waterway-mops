@@ -238,13 +238,4 @@ module {
     return result;
   };
 
-  public func getCanisterLogs_(canisterId : Ids.CanisterId, IC : Management.Management) : async CanisterQueries.CanisterLogs {
-    let result = await (
-      IC.fetch_canister_logs({
-        canister_id = Principal.fromText(canisterId);
-      })
-    );
-    return result;
-  };
-
 };
