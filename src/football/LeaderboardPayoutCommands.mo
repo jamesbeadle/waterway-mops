@@ -6,7 +6,7 @@ import Text "mo:base/Text";
 
 module PayoutCommands = {
     public type LeaderboardPayoutRequest = {
-        app : Enums.WaterwayLabsApp;
+        app : Text;
         leaderboard : [LeaderboardEntry];
         gameweek : FootballDefinitions.GameweekNumber;
         seasonId : FootballIds.SeasonId;
