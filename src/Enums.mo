@@ -81,6 +81,7 @@ module MopsEnums {
         #ICPCasino;
         #OpenCare;
         #OpenBeats;
+        #GolfPad;
     };
 
     public type WaterwayLabsToken = {
