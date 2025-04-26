@@ -12,4 +12,9 @@ module GolfEnums {
         #Completed;
     };
 
+    public type App = {
+        #GolfPad;
+        #JeffBets;
+    }
+
 };
