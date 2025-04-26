@@ -313,6 +313,7 @@ module {
       case (#ICGC) { return ?CanisterIds.ICGC_BACKEND_CANISTER_ID };
       case (#ICF1) { return ?CanisterIds.ICF1_BACKEND_CANISTER_ID };
       case (#OpenBook) { return ?CanisterIds.OPENBOOK_BACKEND_CANISTER_ID };
+      case (#GolfPad) { return ?CanisterIds.GOLFPAD_BACKEND_CANISTER_ID };
       case (_) { return null };
     };
   };
