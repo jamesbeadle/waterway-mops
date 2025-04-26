@@ -9,7 +9,7 @@ import Int16 "mo:base/Int16";
 import Time "mo:base/Time";
 import Nat64 "mo:base/Nat64";
 import Iter "mo:base/Iter";
-import Int64 "mo:base/Int64"; 
+import Int64 "mo:base/Int64";
 import FootballTypes "football/FootballTypes";
 import FootballEnums "football/FootballEnums";
 import Enums "Enums";
@@ -313,7 +313,49 @@ module {
       case (#ICGC) { return ?CanisterIds.ICGC_BACKEND_CANISTER_ID };
       case (#ICF1) { return ?CanisterIds.ICF1_BACKEND_CANISTER_ID };
       case (#OpenBook) { return ?CanisterIds.OPENBOOK_BACKEND_CANISTER_ID };
-      case (_) { return null};
+      case (_) { return null };
+    };
+  };
+
+  public func appToText(app : Enums.WaterwayLabsApp) : ?Text {
+    switch (app) {
+      case (#ICFC) { return ?"ICFC" };
+      case (#WaterwayLabs) { return ?"WaterwayLabs" };
+      case (#FootballGod) { return ?"FootballGod" };
+      case (#OpenFPL) { return ?"OpenFPL" };
+      case (#OpenWSL) { return ?"OpenWSL" };
+      case (#TransferKings) { return ?"TransferKings" };
+      case (#JeffBets) { return ?"JeffBets" };
+      case (#ICGC) { return ?"ICGC" };
+      case (#ICF1) { return ?"ICF1" };
+      case (#OpenBook) { return ?"OpenBook" };
+      case (#OpenChef) { return ?"OpenChef" };
+      case (#ICPCasino) { return ?"ICPCasino" };
+      case (#OpenCare) { return ?"OpenCare" };
+      case (#OpenBeats) { return ?"OpenBeats" };
+      case (#GolfPad) { return ?"GolfPad" };
+      case (#ICPFA) { return ?"ICPFA" };
+    };
+  };
+
+  public func textToApp(app : Text) : ?Enums.WaterwayLabsApp {
+    switch (app) {
+      case ("ICFC") { return ?#ICFC };
+      case ("WaterwayLabs") { return ?#WaterwayLabs };
+      case ("FootballGod") { return ?#FootballGod };
+      case ("OpenFPL") { return ?#OpenFPL };
+      case ("OpenWSL") { return ?#OpenWSL };
+      case ("TransferKings") { return ?#TransferKings };
+      case ("JeffBets") { return ?#JeffBets };
+      case ("ICGC") { return ?#ICGC };
+      case ("ICF1") { return ?#ICF1 };
+      case ("OpenBook") { return ?#OpenBook };
+      case ("OpenChef") { return ?#OpenChef };
+      case ("ICPCasino") { return ?#ICPCasino };
+      case ("OpenCare") { return ?#OpenCare };
+      case ("OpenBeats") { return ?#OpenBeats };
+      case ("GolfPad") { return ?#GolfPad };
+      case (_) { return null };
     };
   };
 
