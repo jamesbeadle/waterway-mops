@@ -1,6 +1,6 @@
 import Enums "../Enums";
 import List "mo:base/List";
-import MopsIds "../Ids";
+import Ids "../Ids";
 import FootballIds "FootballIds";
 import FootballEnums "FootballEnums";
 import FootballDefinitions "FootballDefinitions";
@@ -15,7 +15,7 @@ module FootballTypes {
     relatedGender : Enums.Gender;
     governingBody : Text;
     formed : Int;
-    countryId : MopsIds.CountryId;
+    countryId : Ids.CountryId;
     logo : Blob;
   };
 
@@ -90,7 +90,7 @@ module FootballTypes {
     shirtNumber : Nat8;
     valueQuarterMillions : Nat16;
     dateOfBirth : Int;
-    nationality : MopsIds.CountryId;
+    nationality : Ids.CountryId;
     seasons : List.List<PlayerSeason>;
     valueHistory : List.List<ValueHistory>;
     status : FootballEnums.PlayerStatus;
@@ -170,7 +170,7 @@ module FootballTypes {
     captainFantasticGameweek : FootballDefinitions.GameweekNumber;
     captainFantasticPlayerId : FootballIds.PlayerId;
     oneNationGameweek : FootballDefinitions.GameweekNumber;
-    oneNationCountryId : MopsIds.CountryId;
+    oneNationCountryId : Ids.CountryId;
     prospectsGameweek : FootballDefinitions.GameweekNumber;
     braceBonusGameweek : FootballDefinitions.GameweekNumber;
     hatTrickHeroGameweek : FootballDefinitions.GameweekNumber;

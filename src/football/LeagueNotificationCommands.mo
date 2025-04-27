@@ -1,6 +1,6 @@
 import FootballIds "./FootballIds";
 import FootballDefinitions "./FootballDefinitions";
-module MopsPlayerNotificationCommands = {
+module PlayerNotificationCommands = {
 
     public type LeagueChangeNotification = {
         leagueId: FootballIds.LeagueId;

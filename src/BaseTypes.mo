@@ -1,4 +1,4 @@
-import MopsIds "Ids";
+import Ids "Ids";
 import Enums "Enums";
 
 module BaseTypes {
@@ -15,13 +15,13 @@ module BaseTypes {
     };
 
     public type Country = {
-        id : MopsIds.CountryId;
+        id : Ids.CountryId;
         name : Text;
         code : Text;
     };
 
     public type CanisterTopup = {
-        canisterId : MopsIds.CanisterId;
+        canisterId : Ids.CanisterId;
         topupTime : Int;
         cyclesAmount : Nat;
     };
@@ -54,7 +54,7 @@ module BaseTypes {
 
     public type ApplicationLog = {
         app : Enums.WaterwayLabsApp;
-        id : MopsIds.ApplicationLogId;
+        id : Ids.ApplicationLogId;
         createdOn : Int;
         logType : Enums.LogEntryType;
         title : Text;

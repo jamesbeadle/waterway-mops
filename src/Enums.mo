@@ -1,4 +1,4 @@
-module MopsEnums {
+module Enums {
 
     public type Error = {
         #NotFound;
