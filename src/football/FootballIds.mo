@@ -9,7 +9,4 @@ module FootballIds {
     public type ProposalId = Nat;
 
     public type FootballChannelId = Nat;
-    public type ProjectId = Nat16;
-    public type TeamMemberId = Nat16;
-    public type SupportQueryId = Nat;
 };
