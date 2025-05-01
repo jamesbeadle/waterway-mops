@@ -360,4 +360,8 @@ module {
     };
   };
 
+  public func secondsToDays(seconds : Nat) : Nat {
+    seconds / (60 * 60 * 24);
+  };
+
 };
