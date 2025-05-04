@@ -24,4 +24,9 @@ module BaseQueries {
         hash : Text;
     };
     public type GetDataHashes = {};
+
+    public type DataHashes = {
+        dataHashes : [DataHash];
+    };
+
 };
