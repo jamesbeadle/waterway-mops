@@ -50,7 +50,7 @@ module FootballTypes {
     id : FootballIds.ClubId;
     name : Text;
     friendlyName : Text;
-    gender : Enums.Gender;
+    gender: Enums.Gender;
     primaryColourHex : Text;
     secondaryColourHex : Text;
     thirdColourHex : Text;
@@ -80,7 +80,7 @@ module FootballTypes {
     postponedFixtures : List.List<Fixture>;
   };
 
-  public type DetailedPlayer = {
+  public type Player = {
     id : FootballIds.PlayerId;
     leagueId : FootballIds.LeagueId;
     clubId : FootballIds.ClubId;
@@ -102,23 +102,6 @@ module FootballTypes {
     transferHistory : List.List<TransferHistory>;
     retirementDate : Int;
     gender : Enums.Gender;
-  };
-
-  public type Player = {
-    id : FootballIds.PlayerId;
-    clubId : FootballIds.ClubId;
-    position : FootballEnums.PlayerPosition;
-    firstName : Text;
-    lastName : Text;
-    shirtNumber : Nat8;
-    valueQuarterMillions : Nat16;
-    dateOfBirth : Int;
-    nationality : Ids.CountryId;
-    status : FootballEnums.PlayerStatus;
-    leagueId : FootballIds.LeagueId;
-    parentLeagueId : FootballIds.LeagueId;
-    parentClubId : FootballIds.ClubId;
-    currentLoanEndDate : Int;
   };
 
   public type PlayerSeason = {
