@@ -18,4 +18,10 @@ module BaseQueries {
         name : Text;
         code : Text;
     };
+
+    public type DataHash = {
+        category : Text;
+        hash : Text;
+    };
+    public type GetDataHashes = {};
 };
