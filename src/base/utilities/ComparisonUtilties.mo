@@ -5,7 +5,6 @@ import Nat32 "mo:base/Nat32";
 
 module {
 
-
   public let eqNat = func(a : Nat, b : Nat) : Bool {
     a == b;
   };
@@ -37,4 +36,4 @@ module {
   public let hashNat32 = func(key : Nat32) : Hash.Hash {
     Nat32.fromNat(Nat32.toNat(key) % (2 ** 32 - 1));
   };
-}
+};

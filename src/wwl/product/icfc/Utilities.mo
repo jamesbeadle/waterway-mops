@@ -1,7 +1,11 @@
+import FootballTypes "../../../domain/football/FootballTypes";
+import FootballEnums "../../../domain/football/FootballEnums";
+import Array "mo:base/Array";
+import Int16 "mo:base/Int16";
+import Nat16 "mo:base/Nat16";
 module {
 
-
-  public func calculateAggregatePlayerEvents(events : [FootballDefinitions.PlayerEventData], playerPosition : FootballEnums.PlayerPosition) : Int16 {
+  public func calculateAggregatePlayerEvents(events : [FootballTypes.PlayerEventData], playerPosition : FootballEnums.PlayerPosition) : Int16 {
     var totalScore : Int16 = 0;
 
     if (playerPosition == #Goalkeeper or playerPosition == #Defender) {
@@ -67,4 +71,4 @@ module {
     };
   };
 
-}
+};

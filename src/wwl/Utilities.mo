@@ -67,17 +67,20 @@ module {
     };
   };
 
-  public func tokenToText(token : Enums.WaterwayLabsToken) : Text {
+  public func tokenToText(token : Enums.TokenEcosystem) : Text {
     switch (token) {
       case (#ICFC) { return "ICFC" };
-      case (_) { return "" };
+      case (#ICGC) { return "ICGC" };
+      case (#ICF1) { return "ICF1" };
     };
   };
 
-  public func textToToken(token : Text) : Enums.WaterwayLabsToken {
+  public func textToToken(token : Text) : ?Enums.TokenEcosystem {
     switch (token) {
-      case ("ICFC") { return #ICFC };
-      case (_) { return #Unknown };
+      case ("ICFC") { return ?#ICFC };
+      case ("ICGC") { return ?#ICGC };
+      case ("ICF1") { return ?#ICF1 };
+      case (_) { return null };
     };
   };
-}
+};
