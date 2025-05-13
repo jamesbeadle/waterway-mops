@@ -1,10 +1,10 @@
 import CanisterCommands "CanisterCommands";
 import Result "mo:base/Result";
 import Principal "mo:base/Principal";
-import Enums "../Enums";
-import CanisterIds "../CanisterIds";
-import CanisterUtilities "../CanisterUtilities";
-import Management "../Management";
+import Enums "../base/Enums";
+import CanisterIds "../wwl/CanisterIds";
+import CanisterUtilities "./CanisterUtilities";
+import Management "../core/Management";
 
 actor class _DeleteCanisterDefinition() {
 

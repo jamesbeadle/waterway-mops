@@ -1,0 +1,71 @@
+module BaseEnums {
+
+    public type Gender = {
+        #Male;
+        #Female;
+    };
+
+    public type EntryRequirement = {
+        #FreeEntry;
+        #InviteOnly;
+        #PaidEntry;
+        #PaidInviteEntry;
+    };
+
+    public type Error = {
+        #AlreadyClaimed;
+        #AlreadyExists;
+        #AlreadyUsed;
+        #NotAuthorized;
+        #NotAllowed;
+        #NotFound;
+        #DecodeError;
+        #MaxDataExceeded;
+        #DuplicateData;
+        #InvalidCall;
+        #InvalidData;
+        #InvalidProperty;
+        #TooShort;
+        #TooLong;
+        #CallFailed;
+        #CreateFailed;
+        #UpdateFailed;
+        #ReadFailed;
+        #DeleteFailed;
+        #InsufficientFunds;
+        #InsufficientAmount;
+        #NoneRemaining;
+        #SystemOnHold;
+        #IncorrectSetup;
+        #InEligible;
+    };
+
+    public type LogType = {
+        #Warning;
+        #Error;
+        #Information;
+        #Success;
+        #SystemCheck;
+        #CanisterTopup;
+        #CanisterCreated;
+    };
+
+    public type CanisterType = {
+        #SNS;
+        #Static;
+        #Dynamic;
+    };
+
+    public type PayoutStatus = {
+        #Pending;
+        #Failed;
+        #Paid;
+    };
+
+    public type CanisterStatus = {
+        #stopped;
+        #stopping;
+        #running;
+    };
+
+};

@@ -1,20 +1,22 @@
-import Ids "../Ids";
-import Management "../Management";
-import CanisterUtilities "../CanisterUtilities";
+import Ids "../base/Ids";
+import Management "../core/Management";
+import CanisterUtilities "./CanisterUtilities";
 import Principal "mo:base/Principal";
 import Array "mo:base/Array";
 import Result "mo:base/Result";
 import Debug "mo:base/Debug";
-import Enums "../Enums";
+import Enums "../base/Enums";
 import CanisterQueries "CanisterQueries";
 import CanisterCommands "CanisterCommands";
-import CanisterIds "../CanisterIds";
+import CanisterIds "../wwl/CanisterIds";
+import WaterwayLabsEnums "../wwl/Enums";
 import DeleteCanisterDefinition "DeleteCanisterDefinition";
+
 
 module {
     public class CanisterManager() {
 
-        public func getCanisterInfo(dto : CanisterQueries.GetCanisterInfo, app : Enums.WaterwayLabsApp) : async Result.Result<CanisterQueries.CanisterInfo, Enums.Error> {
+        public func getCanisterInfo(dto : CanisterQueries.GetCanisterInfo, app : WaterwayLabsEnums.WaterwayLabsApp) : async Result.Result<CanisterQueries.CanisterInfo, Enums.Error> {
 
             let IC : Management.Management = actor (CanisterIds.Default);
             let canister_actor = actor (dto.canisterId) : actor {};

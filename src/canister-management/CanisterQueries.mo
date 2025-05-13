@@ -1,14 +1,15 @@
-import Enums "../Enums";
-import Ids "../Ids";
+import WaterwayLabsEnums "../wwl/Enums";
+import BaseEnums "../base/Enums";
+import Ids "../base/Ids";
 
 module CanisterQueries {
 
     public type GetProjectCanisters = {
-        app : Enums.WaterwayLabsApp;
+        app : WaterwayLabsEnums.WaterwayLabsApp;
     };
 
     public type CanisterInfo = {
-        app : Enums.WaterwayLabsApp;
+        app : WaterwayLabsEnums.WaterwayLabsApp;
         canisterId : Ids.CanisterId;
         cycles : Nat;
         computeAllocation : Nat;
@@ -16,20 +17,20 @@ module CanisterQueries {
         memoryAllocation : Nat;
         controllers : [Ids.PrincipalId];
         memoryUsage : Nat;
-        canisterStatus : Enums.CanisterStatus;
+        canisterStatus : BaseEnums.CanisterStatus;
         idleCyclesBurnedPerDay : Nat;
     };
 
     public type Canister = {
-        app : Enums.WaterwayLabsApp;
+        app : WaterwayLabsEnums.WaterwayLabsApp;
         canisterName : Text;
         canisterId : Ids.CanisterId;
-        canisterType : Enums.CanisterType;
+        canisterType : BaseEnums.CanisterType;
     };
 
     public type GetCanisterInfo = {
         canisterId : Ids.CanisterId;
-        app : Enums.WaterwayLabsApp;
+        app : WaterwayLabsEnums.WaterwayLabsApp;
     };
 
     public type ProjectCanisters = {
@@ -37,7 +38,7 @@ module CanisterQueries {
     };
 
     public type ListCanisterSnapshots = {
-        app : Enums.WaterwayLabsApp;
+        app : WaterwayLabsEnums.WaterwayLabsApp;
         canisterId : Ids.CanisterId;
     };
 
