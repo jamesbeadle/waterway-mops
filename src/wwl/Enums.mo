@@ -19,15 +19,17 @@ module WaterwayLabsEnums {
         #GolfPad;
     };
 
-    public type WaterwayLabsToken = {
-        #ICFC;
-        #Unknown;
-    };
-
     public type LogEntryType = {
         #SystemCheck;
         #UnexpectedError;
         #CanisterTopup;
         #CanisterCreated;
     };
-}
+
+    public type TokenEcosystem = {
+        #ICFC;
+        #ICGC;
+        #ICF1;
+    };
+
+};
