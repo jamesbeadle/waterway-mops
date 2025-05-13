@@ -1,6 +1,6 @@
 import Bool "mo:base/Bool";
 import Text "mo:base/Text";
-import Ids "../Ids";
+import Ids "Ids";
 
 module BaseQueries {
 
