@@ -1,9 +1,10 @@
-import BaseTypes "../src/BaseTypes";
+import BaseTypes "../src/base/Types";
 import Principal "mo:base/Principal";
 import Blob "mo:base/Blob";
 import Text "mo:base/Text";
 import Debug "mo:base/Debug";
-import BaseDefinitions "../src/BaseDefinitions";
+import BaseDefinitions "../src/base/Definitions";
+import WWLTypes "../src/wwl/types";
 
 // Helper function to run assertions
 func assertTrue(condition : Bool, message : Text) : async () {
@@ -72,7 +73,7 @@ func testCanisterTopup() : async () {
 
 // Test 6: SystemLog and LogEntryType
 func testSystemLog() : async () {
-    let log : BaseTypes.SystemLog = {
+    let log : WWLTypes.SystemLog = {
         eventId = 1;
         eventTime = 1617235200000;
         eventType = #CanisterTopup;
