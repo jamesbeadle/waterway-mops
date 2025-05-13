@@ -1,5 +1,6 @@
-import FootballIds "./FootballIds";
-import FootballDefinitions "./FootballDefinitions";
+import FootballDefinitions "../../../../domain/football/FootballDefinitions";
+import FootballIds "../../../../domain/football/FootballIds";
+
 module PlayerNotificationCommands = {
 
     public type LeagueChangeNotification = {

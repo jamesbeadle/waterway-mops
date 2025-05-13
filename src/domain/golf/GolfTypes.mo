@@ -1,6 +1,6 @@
 import GolfIds "GolfIds";
-import Ids "../Ids";
 import GolfEnums "GolfEnums";
+import Ids "../../base/Ids";
 
 module GolfTypes {
 

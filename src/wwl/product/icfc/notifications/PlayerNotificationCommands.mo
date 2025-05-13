@@ -1,4 +1,5 @@
-import FootballIds "./FootballIds";
+import FootballIds "../../../../domain/football/FootballIds";
+
 module PlayerNotificationCommands = {
 
   public type PlayerChangeNotification = {

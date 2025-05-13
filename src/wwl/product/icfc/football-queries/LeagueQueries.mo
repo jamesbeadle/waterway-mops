@@ -1,14 +1,12 @@
-import Enums "../../Enums";
-import Ids "../../Ids";
-import FootballIds "../../football/FootballIds";
-import BaseDefinitions "../../BaseDefinitions";
-import FootballDefinitions "../../football/FootballDefinitions";
+import FootballDefinitions "../../../../domain/football/FootballDefinitions";
+import FootballIds "../../../../domain/football/FootballIds";
+import BaseDefinitions "../../../../base/Definitions";
+import Enums "../../../../base/Enums";
+import Ids "../../../../base/Ids";
 
 module LeagueQueries {
 
-    public type GetLeagues = {
-        
-    };
+    public type GetLeagues = { };
 
     public type Leagues = {
         leagues: [League];
@@ -26,9 +24,7 @@ module LeagueQueries {
         logo : Blob;
     };
 
-    public type GetBettableLeagues = {
-
-    };
+    public type GetBettableLeagues = { };
 
     public type BettableLeagues = {
         leagues: [League];

@@ -1,4 +1,5 @@
-import FootballIds "../../../football/FootballIds";
+import FootballIds "../../../../football/FootballIds";
+import FootballEnums "../../../../football/FootballEnums";
 
 module ClubQueries {
     public type GetClubs = {

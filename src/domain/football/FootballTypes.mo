@@ -36,17 +36,12 @@ module FootballTypes {
     transferWindowEndMonth : Nat8;
   };
 
-
-  public type FootballClub = {
-    id : FootballIds.ClubId;
+  public type Season = {
+    id : Nat16;
     name : Text;
-    friendlyName : Text;
-    gender: Enums.Gender;
-    primaryColourHex : Text;
-    secondaryColourHex : Text;
-    thirdColourHex : Text;
-    abbreviatedName : Text;
-    shirtType : FootballEnums.ShirtType;
+    year : Nat16;
+    fixtures : List.List<Fixture>;
+    postponedFixtures : List.List<Fixture>;
   };
 
   public type Fixture = {
@@ -63,12 +58,16 @@ module FootballTypes {
     events : List.List<PlayerEventData>;
   };
 
-  public type Season = {
-    id : Nat16;
+  public type FootballClub = {
+    id : FootballIds.ClubId;
     name : Text;
-    year : Nat16;
-    fixtures : List.List<Fixture>;
-    postponedFixtures : List.List<Fixture>;
+    friendlyName : Text;
+    gender: Enums.Gender;
+    primaryColourHex : Text;
+    secondaryColourHex : Text;
+    thirdColourHex : Text;
+    abbreviatedName : Text;
+    shirtType : FootballEnums.ShirtType;
   };
 
   public type Player = {

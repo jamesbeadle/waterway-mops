@@ -1,4 +1,4 @@
-import FootballIds "../../football/FootballIds";
+import FootballIds "../../../../domain/football/FootballIds";
 
 module SeasonQueries {
     public type GetSeasons = {
