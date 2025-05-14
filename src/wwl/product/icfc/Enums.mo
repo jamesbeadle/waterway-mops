@@ -32,4 +32,20 @@ module ICFCEnums {
         #PendingVerification;
         #Verified;
     };
+
+    public type FriendRequestStatus = 
+    {
+        #SENT;
+        #ACCEPTED;
+        #REJECTED;
+    };
+
+    public type GameStatus =
+    {
+        #NEW;
+        #READY;
+        #ACTIVE;
+        #COMPLETE;
+    };
+
 };

@@ -1,5 +1,15 @@
 module BaseEnums {
 
+    public type Currency = {
+        #BTC;
+        #ICP;
+        #USD;
+        #GBP;
+        #EUR;
+        #ICFC;
+        #ICGC;
+    };
+
     public type Gender = {
         #Male;
         #Female;
@@ -66,6 +76,16 @@ module BaseEnums {
         #stopped;
         #stopping;
         #running;
+    };
+
+    public type DayOfWeek = {
+        #Monday;
+        #Tuesday;
+        #Wednesday;
+        #Thursday;
+        #Friday;
+        #Saturday;
+        #Sunday;
     };
 
 };

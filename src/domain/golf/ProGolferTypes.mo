@@ -1,6 +1,5 @@
 import GolfIds "GolfIds";
 import Ids "../../base/Ids";
-import Types "../../base/Types";
 import Enums "../../base/Enums";
 import Definitions "../../base/Definitions";
 
@@ -87,93 +86,8 @@ module GolfTypes {
         };
 
         public type GolfShot = {
-            
+            shotType: Enums.ShotType;
         };
 
-        public type GolfShot =
-        {
-            index: Nat8;
-            club: ?GolfEnums.Club;
-            yardage: ?Nat16;
-            lie: ?GolfEnums.Lie;
-            shotIntention: ?ShotIntention;
-            shotResult: ?ShotResult;
-            weatherType: ?WeatherType;
-            shotPosition: ?ShotStartPosition
-            shotPosition: ?ShotEndPosition;
-            swingLength: ?SwingLength;
-            dateTime: ?ShotTime;
-        };
-
-
-
-
-        //progolfer
-            //round history
-                //hole history
-                    //shot history
-            //world ranking
-
-
-
-
-        //amateur golfer
-
-
-
-    public type Hole
-    {
-        public int Id { get; set; }
-        public int HoleNumber { get; set; }
-        public int Yardage { get; set; }
-        public int StrokeIndex { get; set; }
-        public int Par { get; set; }
-        public string? Name { get; set; }
-        public int TeeGroupId { get; set; }
-        public virtual TeeGroup TeeGroup { get; set; } = default!;
-    }
-
-    public type MembershipType
-    {
-        public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-        public decimal Price { get; set; }
-        public int GolfCourseId { get; set; }
-        public virtual GolfCourse GolfCourse { get; set; } = default!;
-    }
-
-    public type OpeningHour
-    {
-        public int Id { get; set; }
-        public DayOfWeek DayOfWeek { get; set; }
-        public TimeSpan OpenTime { get; set; }
-        public TimeSpan CloseTime { get; set; }
-        public int GolfCourseId { get; set; }
-        public virtual GolfCourse GolfCourse { get; set; } = default!;
-    }
-
-    public type TeeGroup
-    {
-        public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string? ColorHex { get; set; } = null;
-        public ICollection<Hole> Holes { get; set; } = new List<Hole>();
-        public int GolfCourseId { get; set; }
-        public virtual GolfCourse GolfCourse { get; set; } = default!;
-    }
-
-    public type ClubProfile = {
-        golferProfile: GolferProfile;
-        homeCourseId: GolfIds.GolfCourseId;
-        memberships: [ClubMemberships]
-    };
-
-    public type ClubMembership = {
-        startDate: Int;
-        endDate: Int;
-        fee: Nat;
-        feeCurrency: Currency;
-    };
 
 };

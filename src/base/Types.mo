@@ -36,4 +36,13 @@ module BaseTypes {
         triggerTime : Int;
         callbackName : Text;
     };
+
+    public type BrandInformation = {
+        displayImage: ?Blob;
+        coverImage: ?Blob;
+        primaryHexColour: ?Text;
+        secondaryHexColour: ?Text;
+        thirdHexColour: ?Text;
+        className: ?Text;
+    };
 };

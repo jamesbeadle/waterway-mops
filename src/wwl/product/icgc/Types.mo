@@ -1,7 +1,7 @@
-import FootballDefinitions "../../../domain/football/FootballDefinitions";
-import FootballIds "Ids";
+import FootballDefinitions "football/FootballDefinitions";
+import FootballIds "football/FootballIds";
 import Enums "Enums";
-import LeaderboardPayoutCommands "LeaderboardPayoutCommands";
+import LeaderboardPayoutCommands "football/LeaderboardPayoutCommands";
 import Text "mo:base/Text";
 
 module ICFCTypes {
