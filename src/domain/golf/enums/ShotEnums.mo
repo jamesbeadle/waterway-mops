@@ -1,4 +1,10 @@
 module ShotEnums {
+
+    public type ShotCategory = {
+        #TEE_SHOT;
+        #APPROACH_SHOT;
+        #PUTT;
+    };
         
     public type Club =
     {

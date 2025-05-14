@@ -1,12 +1,10 @@
-import GolfIds "GolfIds";
-import Ids "../../base/Ids";
-import Types "../../base/Types";
-import Enums "../../base/Enums";
-import TournamentEnums "TournamentEnums";
+import Types "../../../base/Types";
+import Enums "../../../base/Enums";
+import GolfIds "../Ids";
+import TournamentEnums "../enums/TournamentEnums";
+import GolfTypes "Types";
 
-module GolfTypes {
-
-    /* ----- Golf Tournament Types ----- */
+module TournamentTypes {
 
     public type Tournament = {
         id: GolfIds.TournamentId;
@@ -41,7 +39,7 @@ module GolfTypes {
     public type TournamentLeaderboardEntry = {
         golferId: GolfIds.ProGolferId;
         tournamentId: GolfIds.TournamentId;
-        rounds: [GolfRound];
+        rounds: [GolfTypes.GolfRound];
         totalShots: Nat;
         usdPrizeAmount: Nat;
         btcPrizeAmount: Nat;
