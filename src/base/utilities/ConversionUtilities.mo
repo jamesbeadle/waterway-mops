@@ -22,13 +22,24 @@ module ConversionUtilities {
     };
 
     public func toLowercase(t : Text.Text) : Text.Text {
-      func charToLower(c : Char) : Char {
-        if (Char.isUppercase(c)) {
-          Char.fromNat32(Char.toNat32(c) + 32);
-        } else {
-          c;
+        func charToLower(c : Char) : Char {
+            if (Char.isUppercase(c)) {
+                Char.fromNat32(Char.toNat32(c) + 32);
+            } else {
+                c;
+            };
         };
-      };
-      Text.map(t, charToLower);
+        Text.map(t, charToLower);
     };
-}
+    public func convertNat64ToFloat(input : Nat64) : Float {
+        return Float.fromInt64(Int64.fromNat64(input));
+    };
+
+    public func convertFloatToNat64(input : Float) : Nat64 {
+        return Nat64.fromIntWrap(Int64.toInt(Float.toInt64(input)));
+    };
+
+    public func convertNatToInt(input : Nat) : Int {
+        return Int64.toInt(Int64.fromNat64(Nat64.fromNat(input)));
+    };
+};

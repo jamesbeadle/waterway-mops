@@ -1,8 +1,8 @@
 import Text "mo:base/Text";
-import Definitions "../../../domain/football/Definitions";
-import FootballIds "../../../domain/football/Ids";
-import Ids "../../../base/Ids";
-import Enums "../../../base/Enums";
+import Definitions "../../domain/football/Definitions";
+import FootballIds "../../domain/football/Ids";
+import Ids "../../base/Ids";
+import Enums "../../base/Enums";
 import ICFCEnums "./Enums";
 
 module PayoutCommands = {
@@ -30,7 +30,6 @@ module PayoutCommands = {
         totalEntries : Nat;
         totalPaid : Nat;
     };
-
 
     public type CompleteLeaderboardPayout = {
         seasonId : FootballIds.SeasonId;

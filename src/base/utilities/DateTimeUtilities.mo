@@ -191,7 +191,7 @@ module DateTimeUtilities {
     return Text.concat(Text.concat(Text.concat(Int.toText(day), " "), monthNames[month - 1]), Text.concat(" ", Int.toText(year)));
   };
 
-  public func getNextHourOfDay(hourOfDay: Int) : Int {
+  public func getNextHourOfDay(hourOfDay : Int) : Int {
     let secondsInADay : Int = 86400;
     let secondsInAnHour : Int = 3600;
     let currentUnixTime : Int = Time.now();
@@ -214,7 +214,7 @@ module DateTimeUtilities {
     seconds / (60 * 60 * 24);
   };
 
-  public func getYear(unixTime: Int) : Int {
+  public func getYear(unixTime : Int) : Int {
     let secondsInADay : Int = 86_400;
     let seconds = unixTime / 1_000_000_000;
     let days = seconds / secondsInADay;
@@ -330,5 +330,17 @@ module DateTimeUtilities {
     daysCount += (ConversionUtilities.intToNat(dayOfYear) - 1);
     return daysCount;
   };
-  
+
+  public func convertDaysToNanosecondsInt(pauseDays : Nat) : Int {
+    let secondsPerDay : Int = 24 * 60 * 60;
+    let nanosecondsPerSecond : Int = 1_000_000_000;
+    return ConversionUtilities.natToInt(pauseDays) * secondsPerDay * nanosecondsPerSecond;
+  };
+
+  public func getDay() : Int {
+    let secondsPerDay : Int = 24 * 60 * 60;
+    let nanosecondsPerSecond : Int = 1_000_000_000;
+    return secondsPerDay * nanosecondsPerSecond;
+  };
+
 };
