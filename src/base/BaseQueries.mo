@@ -5,6 +5,7 @@ import Ids "Ids";
 module BaseQueries {
 
     public type AppStatus = { onHold : Bool; version : Text };
+    
     public type GetAppStatus = {};
 
     public type GetCountries = {};

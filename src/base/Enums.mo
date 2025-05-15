@@ -88,4 +88,10 @@ module BaseEnums {
         #Sunday;
     };
 
+    public type MediaType = {
+        #Image;
+        #Video;
+        #PDF;  
+    };
+
 };

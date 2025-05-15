@@ -1,8 +1,10 @@
 import Float "mo:base/Float";
 import Int64 "mo:base/Int64";
 import Nat64 "mo:base/Nat64";
+import Text "mo:base/Text";
+import Char "mo:base/Char";
 
-module {
+module ConversionUtilities {
     public func intToNat(input : Int) : Nat {
         return Nat64.toNat(Int64.toNat64(Int64.fromInt(input)));
     };
@@ -17,5 +19,16 @@ module {
 
     public func natToFloat(input : Nat) : Float {
         return Float.fromInt(Int64.toInt(Int64.fromNat64(Nat64.fromNat(input))));
+    };
+
+    public func toLowercase(t : Text.Text) : Text.Text {
+      func charToLower(c : Char) : Char {
+        if (Char.isUppercase(c)) {
+          Char.fromNat32(Char.toNat32(c) + 32);
+        } else {
+          c;
+        };
+      };
+      Text.map(t, charToLower);
     };
 }

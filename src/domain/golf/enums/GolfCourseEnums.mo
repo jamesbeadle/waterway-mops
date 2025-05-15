@@ -24,4 +24,16 @@ module GolfEnums {
         #FACILITIES_ONLY;
     };
 
+    public type CompetitionType = {
+        #STABLEFORD;
+        #STROKE_PLAY;
+        #MATCH_PLAY;
+    };
+
+    public type TeeBookingStatus = {
+        #PAID;
+        #CANCELLED;
+        #UNPAID;
+    };
+
 };

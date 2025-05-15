@@ -8,7 +8,7 @@ import Text "mo:base/Text";
 import Time "mo:base/Time";
 import ConversionUtilities "ConversionUtilities";
 
-module {
+module DateTimeUtilities {
 
   public let getHour = func() : Nat { return 1_000_000_000 * 60 * 60 };
 

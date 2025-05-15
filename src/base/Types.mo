@@ -1,4 +1,5 @@
 import Ids "Ids";
+import Enums "Enums";
 
 module BaseTypes {
     
@@ -12,6 +13,30 @@ module BaseTypes {
     public type DataHash = {
         category : Text;
         hash : Text;
+    };
+
+    public type Address = {
+        buildingNameOrNumber: Text;
+        addressLine1: Text;
+        addressLine2: ?Text;
+        addressLine3: ?Text;
+        townOrCity: ?Text;
+        countyOrState: ?Text;
+        postCodeOrZip: ?Text;
+    };
+
+    public type OpeningHour =
+    {
+        index: Nat8;
+        day: Enums.DayOfWeek;
+        openingTime: Int;
+        closingTime: Int;
+    };
+
+    public type Contact = {
+        name: Text;
+        contactType: Text;
+        details: Text;
     };
 
     public type Country = {
