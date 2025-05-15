@@ -21,7 +21,7 @@ module WaterwayLabsEnums {
 
     public type LogEntryType = {
         #SystemCheck;
-        #UnexpectedError;
+        #Error;
         #CanisterTopup;
         #CanisterCreated;
     };
