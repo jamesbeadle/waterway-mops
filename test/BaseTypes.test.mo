@@ -4,7 +4,7 @@ import Blob "mo:base/Blob";
 import Text "mo:base/Text";
 import Debug "mo:base/Debug";
 import BaseDefinitions "../src/base/Definitions";
-import WWLTypes "../src/wwl/types";
+import WWLTypes "../src/product/wwl/Types";
 
 // Helper function to run assertions
 func assertTrue(condition : Bool, message : Text) : async () {
@@ -50,7 +50,7 @@ func testAppStatus() : async () {
 // Test 4: Country
 func testCountry() : async () {
     let country : BaseTypes.Country = {
-        id = 1; 
+        id = 1;
         name = "United States";
         code = "US";
     };

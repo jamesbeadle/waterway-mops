@@ -2,8 +2,9 @@ import Hash "mo:base/Hash";
 import Nat8 "mo:base/Nat8";
 import Nat16 "mo:base/Nat16";
 import Nat32 "mo:base/Nat32";
+import Text "mo:base/Text";
 
-module {
+module ComparisonUtilities {
 
   public let eqNat = func(a : Nat, b : Nat) : Bool {
     a == b;
@@ -35,5 +36,26 @@ module {
 
   public let hashNat32 = func(key : Nat32) : Hash.Hash {
     Nat32.fromNat(Nat32.toNat(key) % (2 ** 32 - 1));
+  };
+
+  public func isHexColourValid(hex : Text) : Bool {
+
+    if (Text.size(hex) != 7 or not Text.startsWith(hex, #text "#")) {
+      return false;
+    };
+
+    let hexChars = "0123456789abcdefABCDEF";
+    let strippedHex = switch (Text.stripStart(hex, #text "#")) {
+      case (?h) h;
+      case null hex;
+    };
+
+    for (char in Text.toIter(strippedHex)) {
+      if (not Text.contains(hexChars, #char char)) {
+        return false;
+      };
+    };
+
+    return true;
   };
 };
