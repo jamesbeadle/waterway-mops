@@ -37,4 +37,12 @@ module ICGCEnums {
         #PendingVerification;
         #Verified;
     };
+
+    public type NotificationType = {
+        #TournamentBegun;
+        #RoundBegun;
+        #ProGolferScoreAdded;
+        #RoundComplete;
+        #TournamentComplete;
+    };
 };
