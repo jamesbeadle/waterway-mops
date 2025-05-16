@@ -1,4 +1,4 @@
-module ICGCEnums {
+module Enums {
     
     public type GameType = 
     {
