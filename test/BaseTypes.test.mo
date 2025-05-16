@@ -4,7 +4,6 @@ import Blob "mo:base/Blob";
 import Text "mo:base/Text";
 import Debug "mo:base/Debug";
 import BaseDefinitions "../src/base/Definitions";
-import WWLTypes "../src/product/wwl/Types";
 
 // Helper function to run assertions
 func assertTrue(condition : Bool, message : Text) : async () {

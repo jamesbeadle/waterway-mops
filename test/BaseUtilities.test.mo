@@ -1,5 +1,5 @@
 import Error "mo:base/Error";
-import ComparisonUtilties "../src/base/utilities/ComparisonUtilties";
+import ComparisonUtilties "../src/base/utilities/comparison-utilities";
 
 func runTests() : async () {
     await testEqNat8();
