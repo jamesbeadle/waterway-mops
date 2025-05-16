@@ -1,6 +1,6 @@
 import Enums "../Enums";
 import Types "../Types";
-module LogsQueries {
+module LogQueries {
 
     public type GetApplicationLogs = {
         app : Enums.WaterwayLabsApp;

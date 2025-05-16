@@ -5,7 +5,7 @@ import Ids "../../base/Ids";
 import Enums "../../base/Enums";
 import ICFCEnums "./Enums";
 
-module PayoutCommands = {
+module InterAppCallCommands = {
     public type LeaderboardPayoutRequest = {
         app : Text;
         leaderboard : [LeaderboardEntry];
