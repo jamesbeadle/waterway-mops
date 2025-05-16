@@ -33,11 +33,6 @@ module Enums {
         #JeffBets;
     };
 
-    public type ICGCLinkStatus = {
-        #PendingVerification;
-        #Verified;
-    };
-
     public type NotificationType = {
         #TournamentBegun;
         #RoundBegun;

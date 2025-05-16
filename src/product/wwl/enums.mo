@@ -35,4 +35,9 @@ module Enums {
         #ICF1;
     };
 
+    public type LinkStatus = {
+        #PendingVerification;
+        #Verified;
+    };
+
 };
