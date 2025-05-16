@@ -7,19 +7,18 @@ module {
     public type SystemLog = {
         eventId : Nat;
         eventTime : Int;
-        eventType : Enums.LogEntryType;
+        eventType : Enums.LogType;
         eventTitle : Text;
         eventDetail : Text;
     };
-
 
     public type ApplicationLog = {
         app : Enums.WaterwayLabsApp;
         id : Ids.ApplicationLogId;
         createdOn : Int;
-        logType : Enums.LogEntryType;
+        logType : Enums.LogType;
         title : Text;
         detail : Text;
         error : ?BaseEnums.Error;
     };
-}
+};
