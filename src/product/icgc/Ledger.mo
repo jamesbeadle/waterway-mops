@@ -1,4 +1,4 @@
-import CanisterIds "../wwl/CanisterIds";
+import CanisterIds "../wwl/canister-ids";
 
 module {
     public let CANISTER_ID : Text = CanisterIds.ICFC_SNS_LEDGER_CANISTER_ID;
