@@ -35,4 +35,9 @@ module WaterwayLabsEnums {
         #ICF1;
     };
 
+    public type LinkStatus = {
+        #PendingVerification;
+        #Verified;
+    };
+
 };
