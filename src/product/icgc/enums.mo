@@ -33,6 +33,11 @@ module ICGCEnums {
         #JeffBets;
     };
 
+    public type ICGCLinkStatus = {
+        #PendingVerification;
+        #Verified;
+    };
+
     public type NotificationType = {
         #TournamentBegun;
         #RoundBegun;
