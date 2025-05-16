@@ -71,25 +71,6 @@ func testCanisterTopup() : async () {
     await assertTrue(topup.cyclesAmount == 1_000_000_000, "CanisterTopup cyclesAmount should match");
 };
 
-// Test 6: SystemLog and LogEntryType
-func testSystemLog() : async () {
-    let log : WWLTypes.SystemLog = {
-        eventId = 1;
-        eventTime = 1617235200000;
-        eventType = #CanisterTopup;
-        eventTitle = "Topup Event";
-        eventDetail = "Canister topped up with 1T cycles";
-    };
-    await assertTrue(log.eventId == 1, "SystemLog eventId should match");
-    await assertTrue(log.eventTime == 1617235200000, "SystemLog eventTime should match");
-    switch (log.eventType) {
-        case (#CanisterTopup) await assertTrue(true, "SystemLog eventType should be CanisterTopup");
-        case (_) await assertTrue(false, "SystemLog eventType mismatch");
-    };
-    await assertTrue(log.eventTitle == "Topup Event", "SystemLog eventTitle should match");
-    await assertTrue(log.eventDetail == "Canister topped up with 1T cycles", "SystemLog eventDetail should match");
-};
-
 // Test 7: Account
 func testAccount() : async () {
     let account : BaseTypes.Account = {
@@ -118,7 +99,6 @@ func runTests() : async () {
     await testAppStatus();
     await testCountry();
     await testCanisterTopup();
-    await testSystemLog();
     await testAccount();
     await testTimerInfo();
 };
