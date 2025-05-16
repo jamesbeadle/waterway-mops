@@ -49,7 +49,7 @@ module {
         body : Blob;
         headers : [(Text, Text)];
     };
-    type HttpResponse = {
+    public type HttpResponse = {
         body : Blob;
         headers : [(Text, Text)];
         status_code : Nat16;
@@ -60,7 +60,7 @@ module {
         subaccount : ?Subaccount;
     };
 
-    type TransferArg = {
+    public type TransferArg = {
         from_subaccount : ?Subaccount;
         to : Account;
         amount : Tokens;
@@ -80,25 +80,25 @@ module {
         #GenericError : { error_code : Nat; message : Text };
     };
 
-    type TransferResult = {
+    public type TransferResult = {
         #Ok : BlockIndex;
         #Err : TransferError;
     };
 
     // The value returned from the [icrc1_metadata] endpoint.
-    type MetadataValue = {
+    public type MetadataValue = {
         #Nat : Nat;
         #Int : Int;
         #Text : Text;
         #Blob : Blob;
     };
 
-    type FeatureFlags = {
+    public type FeatureFlags = {
         icrc2 : Bool;
     };
 
     // The initialization parameters of the Ledger
-    type InitArgs = {
+    public type InitArgs = {
         minting_account : Account;
         fee_collector_account : ?Account;
         transfer_fee : Nat;
