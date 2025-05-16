@@ -50,16 +50,6 @@ module BaseEnums {
         #InEligible;
     };
 
-    public type LogType = {
-        #Warning;
-        #Error;
-        #Information;
-        #Success;
-        #SystemCheck;
-        #CanisterTopup;
-        #CanisterCreated;
-    };
-
     public type CanisterType = {
         #SNS;
         #Static;

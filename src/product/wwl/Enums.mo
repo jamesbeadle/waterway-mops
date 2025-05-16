@@ -19,9 +19,12 @@ module WaterwayLabsEnums {
         #GolfPad;
     };
 
-    public type LogEntryType = {
-        #SystemCheck;
+    public type LogType = {
+        #Warning;
         #Error;
+        #Information;
+        #Success;
+        #SystemCheck;
         #CanisterTopup;
         #CanisterCreated;
     };
