@@ -3,7 +3,7 @@ import GolfIds "../../../domain/golf/ids";
 import GolfCourseEnums "../../../domain/golf/enums/golf-course-enums";
 import GolfDefinitions "../../../domain/golf/definitions";
 import Ids "../../../base/ids";
-import Types "../../../base/Types";
+import Types "../../../base/types";
 
 module GolfCourseQueries {
     public type GetGolfCourses = {

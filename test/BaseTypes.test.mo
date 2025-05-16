@@ -1,9 +1,9 @@
-import BaseTypes "../src/base/Types";
+import BaseTypes "../src/base/types";
 import Principal "mo:base/Principal";
 import Blob "mo:base/Blob";
 import Text "mo:base/Text";
 import Debug "mo:base/Debug";
-import BaseDefinitions "../src/base/Definitions";
+import BaseDefinitions "../src/base/definitions";
 
 // Helper function to run assertions
 func assertTrue(condition : Bool, message : Text) : async () {

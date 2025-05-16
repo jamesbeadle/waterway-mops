@@ -8,7 +8,7 @@ import Ledger "../../../base/def/sns-wrappers/ledger";
 import Account "../../../base/def/account";
 
 module {
-    public class ICRCTokenManager() {
+    public class PayoutManager() {
         
         public func payoutUser(principal : Ids.PrincipalId, amount : Nat64, tokenledgerId : Text) : async Result.Result<(), Ledger.TransferError> {
             let token_ledger : Ledger.Interface = actor (tokenledgerId);

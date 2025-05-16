@@ -1,10 +1,10 @@
-import WWLEnums "../enums";
+import AppEnums "../enums";
 import BaseEnums "../../../base/enums";
 
 module LogCommands {
     public type AddApplicationLog = {
-        app : WWLEnums.WaterwayLabsApp;
-        logType : WWLEnums.LogType;
+        app : AppEnums.WaterwayLabsApp;
+        logType : AppEnums.LogType;
         title : Text;
         detail : Text;
         error : ?BaseEnums.Error;
