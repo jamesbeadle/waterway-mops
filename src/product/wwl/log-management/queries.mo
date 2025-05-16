@@ -1,5 +1,5 @@
 import Enums "../enums";
-import Ids "../Ids";
+import Ids "../ids";
 import BaseEnums "../../../base/enums";
 
 module LogQueries {

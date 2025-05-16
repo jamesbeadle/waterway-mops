@@ -4,7 +4,7 @@ import Definitions "../../base/definitions";
 import Ids "../../base/ids";
 import Enums "../../base/enums";
 
-module PayoutCommands = {
+module InterAppCallCommands = {
     public type LeaderboardPayoutRequest = {
         app : Text;
         leaderboard : [LeaderboardEntry];

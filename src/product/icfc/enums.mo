@@ -1,4 +1,4 @@
-module ICFCEnums {
+module Enums {
 
     public type TimerType = {
         #LoanComplete;

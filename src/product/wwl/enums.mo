@@ -1,4 +1,4 @@
-module WaterwayLabsEnums {
+module Enums {
 
     public type WaterwayLabsApp = {
         #WaterwayLabs;
