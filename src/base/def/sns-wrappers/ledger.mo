@@ -69,7 +69,7 @@ module {
         created_at_time : ?Timestamp;
     };
 
-    type TransferError = {
+    public type TransferError = {
         #BadFee : { expected_fee : Tokens };
         #BadBurn : { min_burn_amount : Tokens };
         #InsufficientFunds : { balance : Tokens };
