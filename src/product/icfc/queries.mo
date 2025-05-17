@@ -28,7 +28,8 @@ module ICFCQueries {
     };
 
     public type GetProfile = {
-
+        app: Enums.App;
+        principalId: Ids.PrincipalId;
     };
 
     public type Profile = {
