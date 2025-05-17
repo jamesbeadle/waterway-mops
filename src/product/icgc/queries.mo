@@ -1,5 +1,5 @@
 import Enums "enums";
-import FootballIds "../../domain/football/ids";
+import GolfIds "../../domain/golf/ids";
 import Ids "../../base/ids";
 
 module ICFCQueries {
@@ -9,12 +9,12 @@ module ICFCQueries {
     public type ICFCLinks = {
         icfcPrincipalId : Ids.PrincipalId;
         subAppUserPrincipalId : Ids.PrincipalId;
-        subscriptionType : Enums.SubscriptionType;
+        membershipType : Enums.MembershipType;
         subApp : Enums.SubApp;
     };
 
     public type GetDataHashes = {
-        leagueId: FootballIds.LeagueId;
+        tournamentId: GolfIds.TournamentId;
     };
 
     public type GetDataTotals = {
@@ -35,19 +35,18 @@ module ICFCQueries {
         principalId : Ids.PrincipalId;
         username : Text;
         displayName : Text;
-        subscriptionType : Enums.SubscriptionType;
-        subscriptions : [Subscription];
+        membershipType : Enums.MembershipType;
+        memberships : [Membership];
         createdOn : Int;
         profilePicture : ?Blob;
         termsAgreed : Bool;
         subscriptionExpiryTime : Int;
-        favouriteLeagueId : ?FootballIds.LeagueId;
-        favouriteClubId : ?FootballIds.ClubId;
+        homeCourseId: GolfIds.GolfCourseId;
         nationalityId : ?Ids.CountryId;
     };
 
-    public type Subscription = {
-        subscriptionType : Enums.SubscriptionType;
+    public type Membership = {
+        subscriptionType : Enums.MembershipType;
         purchasedOn : Int;
         expiresOn : ?Int;
     };
