@@ -19,7 +19,7 @@ module GolfPadRewardPayoutCommands = {
     };
 
     public type TournamentLeaderboard = {
-        seasonId: GolfIds.TournamentId;
+        tournamentId: GolfIds.TournamentId;
         year: Definitions.Year;
         leaderboard : [LeaderboardEntry];
     };
