@@ -1,5 +1,5 @@
-import Ids "ids";
 import Enums "enums";
+import Ids "ids";
 
 module BaseTypes {
     

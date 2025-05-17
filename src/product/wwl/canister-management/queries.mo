@@ -1,6 +1,6 @@
-import WaterwayLabsEnums "../../../product/wwl/enums";
 import BaseEnums "../../../base/enums";
 import Ids "../../../base/ids";
+import WaterwayLabsEnums "../../../product/wwl/enums";
 
 module CanisterQueries {
 

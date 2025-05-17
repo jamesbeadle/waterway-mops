@@ -1,6 +1,6 @@
+import Enums "enums";
 import FootballIds "../../domain/football/ids";
 import Ids "../../base/ids";
-import Enums "enums";
 
 module ICFCQueries {
    

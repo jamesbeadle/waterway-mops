@@ -1,6 +1,6 @@
-import FootballIds "../../../domain/football/ids";
-import FootballEnums "../../../domain/football/enums";
 import FootballDefinitions "../../../domain/football/definitions";
+import FootballEnums "../../../domain/football/enums";
+import FootballIds "../../../domain/football/ids";
 
 module FixtureQueries {
     public type GetFixtures = {

@@ -3,9 +3,10 @@ import Cycles "mo:base/ExperimentalCycles";
 import Nat "mo:base/Nat";
 import Principal "mo:base/Principal";
 import Text "mo:base/Text";
-import Management "../../../base/def/management";
+
 import CanisterCommands "./commands";
 import CanisterQueries "./queries";
+import Management "../../../base/def/management";
 
 module {
 

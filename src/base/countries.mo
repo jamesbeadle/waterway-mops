@@ -1,4 +1,5 @@
 import Base "../base/types";
+
 module Countries {
 
   public let countries : [Base.Country] = [

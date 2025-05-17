@@ -1,9 +1,9 @@
 import Definitions "../../../base/definitions";
+import Enums "../../../base/enums";
 import GolfIds "../../../domain/golf/ids";
 import GolfCourseEnums "../../../domain/golf/enums/golf-course-enums";
 import GolfDefinitions "../../../domain/golf/definitions";
 import Ids "../../../base/ids";
-import Types "../../../base/types";
 
 module GolfCourseQueries {
     public type GetGolfCourses = {
@@ -19,15 +19,43 @@ module GolfCourseQueries {
         teeGroup: TeeGroup;
         visitorInformation: Text;
         facilities: [GolfCourseEnums.FacilityType];
-        address: ?Types.Address;
-        openingHours: [Types.OpeningHour];
-        branding: ?Types.BrandInformation;
+        address: ?Address;
+        openingHours: [OpeningHour];
+        branding: ?BrandInformation;
         foundedOn: ?Definitions.UnixTime;
         foundedYear: ?Definitions.Year;
         courseImage: ?Blob;
         bannerImage: ?Blob;
         status: GolfCourseEnums.CourseStatus;
         countryId : Ids.CountryId;
+    };
+
+    public type Address = {
+        buildingNameOrNumber: Text;
+        addressLine1: Text;
+        addressLine2: ?Text;
+        addressLine3: ?Text;
+        townOrCity: ?Text;
+        countyOrState: ?Text;
+        postCodeOrZip: ?Text;
+    };
+
+
+    public type OpeningHour =
+    {
+        index: Nat8;
+        day: Enums.DayOfWeek;
+        openingTime: Int;
+        closingTime: Int;
+    };
+
+    public type BrandInformation = {
+        displayImage: ?Blob;
+        coverImage: ?Blob;
+        primaryHexColour: ?Text;
+        secondaryHexColour: ?Text;
+        thirdHexColour: ?Text;
+        className: ?Text;
     };
 
     public type TeeGroup =

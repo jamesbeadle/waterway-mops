@@ -1,7 +1,7 @@
-import FootballDefinitions "../../../domain/football/definitions";
-import FootballIds "../../../domain/football/ids";
 import BaseDefinitions "../../../base/definitions";
 import Enums "../../../base/enums";
+import FootballDefinitions "../../../domain/football/definitions";
+import FootballIds "../../../domain/football/ids";
 import Ids "../../../base/ids";
 
 module LeagueQueries {

@@ -1,11 +1,12 @@
-import Result "mo:base/Result";
-import Principal "mo:base/Principal";
 import Nat64 "mo:base/Nat64";
-import Int "mo:base/Int";
+import Principal "mo:base/Principal";
+import Result "mo:base/Result";
 import Time "mo:base/Time";
-import Ids "../../../base/ids";
-import Ledger "../../../base/def/sns-wrappers/ledger";
+
 import Account "../../../base/def/account";
+import Ids "../../../base/ids";
+import Int "mo:base/Int";
+import Ledger "../../../base/def/sns-wrappers/ledger";
 
 module {
     public class PayoutManager() {

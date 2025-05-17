@@ -1,16 +1,17 @@
-import Principal "mo:base/Principal";
 import Array "mo:base/Array";
-import Result "mo:base/Result";
 import Debug "mo:base/Debug";
 import Ids "../../../base/ids";
-import Management "../../../base/def/management";
-import CanisterUtilities "./utilities";
-import Enums "../../../base/enums";
-import CanisterQueries "queries";
+import Principal "mo:base/Principal";
+import Result "mo:base/Result";
+
 import CanisterCommands "commands";
 import CanisterIds "../canister-ids";
-import WaterwayLabsEnums "../enums";
+import CanisterQueries "queries";
+import CanisterUtilities "./utilities";
 import DeleteCanisterDefinition "delete-canister-definition";
+import Enums "../../../base/enums";
+import Management "../../../base/def/management";
+import WaterwayLabsEnums "../enums";
 
 module {
     public class CanisterManager() {

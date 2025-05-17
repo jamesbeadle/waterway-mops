@@ -1,4 +1,3 @@
-import ConversionUtilities "conversion-utilities";
 import Int "mo:base/Int";
 import Int64 "mo:base/Int64";
 import Iter "mo:base/Iter";
@@ -7,6 +6,8 @@ import Nat8 "mo:base/Nat8";
 import Nat64 "mo:base/Nat64";
 import Text "mo:base/Text";
 import Time "mo:base/Time";
+
+import ConversionUtilities "conversion-utilities";
 
 module DateTimeUtilities {
 

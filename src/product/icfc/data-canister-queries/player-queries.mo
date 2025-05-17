@@ -1,7 +1,7 @@
 import FootballDefinitions "../../../domain/football/definitions";
+import FootballEnums "../../../domain/football/enums";
 import FootballIds "../../../domain/football/ids";
 import Ids "../../../base/ids";
-import FootballEnums "../../../domain/football/enums";
 
 module PlayerQueries {
     public type GetPlayers = {

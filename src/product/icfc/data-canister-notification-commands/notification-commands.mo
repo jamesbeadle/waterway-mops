@@ -1,6 +1,7 @@
 import ClubNotificationCommands "./club-notification-commands";
 import LeagueNotificationCommands "./league-notification-commands";
 import PlayerNotificationCommands "./player-notification-commands";
+
 module NotificationCommands {
     public type Notification = {
         #CreateClub : ClubNotificationCommands.ClubChangeNotification;

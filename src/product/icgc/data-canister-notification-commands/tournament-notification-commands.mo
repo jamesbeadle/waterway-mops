@@ -1,6 +1,6 @@
-import GolfIds "../../../domain/golf/ids";
 import Definitions "../../../base/definitions";
 import GolfDefinitions "../../../domain/golf/definitions";
+import GolfIds "../../../domain/golf/ids";
 
 module TournamentNotificationCommands = {
 
