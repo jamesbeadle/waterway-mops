@@ -151,4 +151,20 @@ module PlayerQueries {
         events : [PlayerEventData];
     };
 
+    public type GetPlayerValueLeaderboard = {};
+
+    public type PlayerValueLeaderboard = {
+        players : [PlayerSummary];
+    };
+
+    public type PlayerSummary = {
+        playerId : FootballIds.PlayerId;
+        clubId : FootballIds.ClubId;
+        leagueId : FootballIds.LeagueId;
+        position : Nat;
+        positionText : Text;
+        totalValue : Nat16;
+        priorValue : Nat16;
+    };
+
 }
