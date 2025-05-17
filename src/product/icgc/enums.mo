@@ -19,10 +19,11 @@ module Enums {
     };
 
     public type MembershipType = {
-        #Monthly;
-        #Annual;
-        #Lifetime;
-        #Founding;
+        #Free;
+        #Reward;
+        #Paid;
+        #Pro;
+        #Business;
         #Expired;
         #NotClaimed;
         #NotEligible;

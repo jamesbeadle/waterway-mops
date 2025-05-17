@@ -51,9 +51,9 @@ module BaseEnums {
     };
 
     public type CanisterType = {
-        #SNS;
         #Static;
         #Dynamic;
+        #SNS;
     };
 
     public type PayoutStatus = {
