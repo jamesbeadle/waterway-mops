@@ -29,6 +29,8 @@ module CanisterIds {
     public let NEURON_CONTROLLER_CANISTER_ID = "hqfmc-cqaaa-aaaal-qitcq-cai";
     public let WATERWAY_LABS_BACKEND_CANISTER_ID = "rbqtt-7yaaa-aaaal-qcndq-cai";
 
+    public let CKBTC_LEDGER_CANISTER_ID = "mxzaz-hqaaa-aaaar-qaada-cai";
+
     public func getAppCanisterId(app : Enums.WaterwayLabsApp) : ?Text {
         switch (app) {
             case (#ICFC) { return ?CanisterIds.ICFC_BACKEND_CANISTER_ID };

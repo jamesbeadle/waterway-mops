@@ -1,7 +1,7 @@
 module BaseEnums {
 
     public type Currency = {
-        #BTC;
+        #CKBTC;
         #ICP;
         #USD;
         #GBP;
