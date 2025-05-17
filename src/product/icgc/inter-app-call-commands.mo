@@ -19,13 +19,7 @@ module InterAppCallCommands = {
         payoutDate : ?Int;
     };
 
-    public type PayoutRequest = {
-        tournamentId : GolfIds.TournamentId;
-        year : Definitions.Year;
-        leaderboard : [LeaderboardEntry];
-    };
-
-    public type CompleteLeaderboardPayout = {
+    public type LeaderboardPayoutResponse = {
         tournamentId : GolfIds.TournamentId;
         year : Definitions.Year;
         leaderboard : [LeaderboardEntry];

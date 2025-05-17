@@ -1,17 +1,16 @@
-import Text "mo:base/Text";
 import Definitions "../../domain/football/definitions";
-import FootballIds "../../domain/football/ids";
-import Ids "../../base/ids";
 import Enums "../../base/enums";
+import FootballIds "../../domain/football/ids";
 import ICFCEnums "./enums";
+import Ids "../../base/ids";
 
 module InterAppCallCommands = {
     public type LeaderboardPayoutRequest = {
-        app : Text;
+        app : ICFCEnums.App;
         leaderboard : [LeaderboardEntry];
         gameweek : Definitions.GameweekNumber;
         seasonId : FootballIds.SeasonId;
-        token : Text;
+        currency : Enums.Currency;
     };
 
     public type LeaderboardEntry = {
@@ -21,20 +20,14 @@ module InterAppCallCommands = {
         payoutDate : ?Int;
     };
 
-    public type PayoutRequest = {
+    public type LeaderboardPayoutResponse = {
         seasonId : FootballIds.SeasonId;
         gameweek : Definitions.GameweekNumber;
-        app : ICFCEnums.SubApp;
+        app : ICFCEnums.App;
         leaderboard : [LeaderboardEntry];
-        token : Text;
+        currency : Enums.Currency;
         totalEntries : Nat;
         totalPaid : Nat;
-    };
-
-    public type CompleteLeaderboardPayout = {
-        seasonId : FootballIds.SeasonId;
-        gameweek : Definitions.GameweekNumber;
-        leaderboard : [LeaderboardEntry];
     };
 
 };
