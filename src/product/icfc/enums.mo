@@ -9,11 +9,11 @@ module Enums {
         #TransferWindow;
     };
 
-    public type MembershipType = {
-        #Monthly;
-        #Seasonal;
-        #Lifetime;
-        #Founding;
+    public type SubscriptionType = {
+        #Free;
+        #Reward;
+        #Paid;
+        #Pro;
         #Expired;
         #NotClaimed;
         #NotEligible;
