@@ -25,9 +25,6 @@ module ICFCQueries {
         totalLeagues: Nat;
         totalClubs: Nat;
         totalPlayers: Nat;
-        totalNeurons: Nat;
-        totalProposals: Nat;
-        totalGovernanceRewards: Nat;
     };
 
 };
