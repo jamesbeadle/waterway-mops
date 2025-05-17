@@ -343,4 +343,35 @@ module DateTimeUtilities {
     return secondsPerDay * nanosecondsPerSecond;
   };
 
+  public func getSubscriptionExpiration(unixTime : Int) : Int {
+    let secondsInADay : Int = 86_400;
+    let nanosecondsPerSecond : Int = 1_000_000_000;
+    
+    let inputSeconds = unixTime / nanosecondsPerSecond;
+    let inputDays = inputSeconds / secondsInADay;
+    
+    let inputYear = getYear(inputDays);
+    let inputDayOfYear = getDayOfYear(inputDays, inputYear) + 1;
+    
+    let targetYear = inputYear + 1;
+    
+    let isInputLeapYear = isLeapYear(inputYear);
+    let isFeb29 = if (isInputLeapYear) {
+      let month = unixTimeToMonth(unixTime);
+      let day = inputDayOfYear - (if (month > 1) { 31 } else { 0 });
+      month == 2 and day == 29
+    } else {
+      false
+    };
+    
+    var targetDayOfYear = inputDayOfYear;
+    if (isFeb29 and not isLeapYear(targetYear)) {
+      targetDayOfYear := 59;
+    };
+    
+    let epochDays = daysSince1970(targetYear, targetDayOfYear);
+    let epochSeconds = epochDays * secondsInADay;
+    return epochSeconds * nanosecondsPerSecond;
+  };
+
 };
