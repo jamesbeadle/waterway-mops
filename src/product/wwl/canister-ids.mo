@@ -1,3 +1,4 @@
+import Enums "./enums";
 module CanisterIds {
     public let Default = "aaaaa-aa";
     
@@ -27,5 +28,28 @@ module CanisterIds {
     
     public let NEURON_CONTROLLER_CANISTER_ID = "hqfmc-cqaaa-aaaal-qitcq-cai";
     public let WATERWAY_LABS_BACKEND_CANISTER_ID = "rbqtt-7yaaa-aaaal-qcndq-cai";
+
+    public func getAppCanisterId(app : Enums.WaterwayLabsApp) : ?Text {
+        switch (app) {
+            case (#ICFC) { return ?CanisterIds.ICFC_BACKEND_CANISTER_ID };
+            case (#WaterwayLabs) {
+                return ?CanisterIds.WATERWAY_LABS_BACKEND_CANISTER_ID;
+            };
+            case (#FootballGod) {
+                return ?CanisterIds.FOOTBALL_GOD_BACKEND_CANISTER_ID;
+            };
+            case (#OpenFPL) { return ?CanisterIds.OPENFPL_BACKEND_CANISTER_ID };
+            case (#OpenWSL) { return ?CanisterIds.OPENWSL_BACKEND_CANISTER_ID };
+            case (#TransferKings) {
+                return ?CanisterIds.TRANSFER_KINGS_BACKEND_CANISTER_ID;
+            };
+            case (#JeffBets) { return ?CanisterIds.JEFF_BETS_BACKEND_CANISTER_ID };
+            case (#ICGC) { return ?CanisterIds.ICGC_BACKEND_CANISTER_ID };
+            case (#ICF1) { return ?CanisterIds.ICF1_BACKEND_CANISTER_ID };
+            case (#OpenBook) { return ?CanisterIds.OPENBOOK_BACKEND_CANISTER_ID };
+            case (#GolfPad) { return ?CanisterIds.GOLFPAD_BACKEND_CANISTER_ID };
+            case (_) { return null };
+        };
+    };
 
 };
