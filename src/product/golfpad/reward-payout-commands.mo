@@ -1,9 +1,9 @@
-import GolfIds "../../domain/golf/ids";
 import Definitions "../../base/definitions";
-import Ids "../../base/ids";
 import Enums "../../base/enums";
-import GolfPadEnums "enums";
+import GolfIds "../../domain/golf/ids";
+import Ids "../../base/ids";
 import ICGCEnums "../icgc/enums";
+import GolfPadEnums "enums";
 
 module GolfPadRewardPayoutCommands = {
   

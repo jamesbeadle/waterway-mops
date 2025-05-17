@@ -81,18 +81,4 @@ module OpenFPLRewardPayoutCommands = {
         appPrincipalId : Ids.PrincipalId;
     };
     
-    public type LeaderboardPayoutResponse = {
-        request: PayoutRequest;
-        leaderboard : [PaidLeaderboardEntry];
-        totalEntries : Nat;
-        totalPaid : Nat;
-    };
-    
-    public type PaidLeaderboardEntry = {
-        appPrincipalId : Ids.PrincipalId;
-        rewardAmount : ?Nat64;
-        payoutStatus : Enums.PayoutStatus;
-        payoutDate : ?Int;
-    };
-
 };
