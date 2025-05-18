@@ -18,13 +18,39 @@ module FootballEnums {
         #Filled;
         #Striped;
     };
-
+    
     public type GoalType = {
+        #OpenPlay;
+        #Penalty;
+        #FreeKick; 
+        #OwnGoal;
+        #DirectSetPiece;
+    };
+
+    public type GoalProperty = {
+        #InsideBox;          
+        #OutsideBox;       
+        #CounterAttack;     
+        #HalfVolley;         
+        #Volley;             
+        #BicycleKick;   
+        #Chip;          
+        #Curl;              
+        #Driven;            
+        #Low;         
+        #Lob;           
+        #DivingHeader;       
+    };
+
+    public type GoalScoredWith = {
         #LeftFoot;
         #RightFoot;
         #Header;
-        #OutsideBox;
-        #DirectSetPiece;
+        #Chest; 
+        #Knee;  
+        #Shin;   
+        #Backheel;          
+        #Other;         
     };
 
     public type PlayerEventType = {
