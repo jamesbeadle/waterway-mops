@@ -1,4 +1,7 @@
 import Base "../base/types";
+import Ids "ids";
+import Array "mo:base/Array";
+import Option "mo:base/Option";
 
 module Countries {
 
@@ -203,4 +206,11 @@ module Countries {
     { id = 198; name = "Wales"; code = "Wal" },
     { id = 199; name = "Northern Ireland"; code = "Nor" },
   ];
+
+  public func countryExists(countryId: Ids.CountryId) : Bool {
+    let country = Array.find(countries, func(entry: Base.Country) : Bool {
+      entry.id == countryId;
+    });
+    return Option.isSome(country);
+  }
 };
