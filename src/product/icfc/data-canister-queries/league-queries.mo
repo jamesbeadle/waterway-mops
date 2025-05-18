@@ -18,10 +18,12 @@ module LeagueQueries {
         abbreviation : Text;
         teamCount : Nat8;
         relatedGender : Enums.Gender;
-        governingBody : Text;
+        governingBody : FootballIds.GoverningBodyId;
+        confederation: FootballIds.ConfederationId;
         formed : Int;
         countryId : Ids.CountryId;
         logo : Blob;
+        nationalTier: Nat;
     };
 
     public type GetBettableLeagues = { };

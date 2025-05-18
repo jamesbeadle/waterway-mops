@@ -7,4 +7,7 @@ module FootballIds {
     public type FixtureId = Nat32;
     public type ClubId = Nat16;
     public type PlayerId = Nat16;
+    public type ClubCupId = Nat16;
+    public type InternationalTournamentId = Nat16;
+    
 };
