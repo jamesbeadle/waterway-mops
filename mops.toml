@@ -1,6 +1,6 @@
 [package]
 name = "waterway-mops"
-version = "3.2.4"
+version = "3.2.5"
 description = "Waterway Labs Type Library"
 repository = "https://github.com/jamesbeadle/waterway-mops"
 keywords = [ "motoko", "football", "golf" ]
