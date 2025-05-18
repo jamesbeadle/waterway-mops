@@ -23,7 +23,7 @@ module LeagueQueries {
         federationId: FootballIds.FederationId;
         formed : Int;
         countryId : Ids.CountryId;
-        logo : Blob;
+        logo : ?Blob;
         nationalTier: Nat;
     };
 
