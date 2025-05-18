@@ -75,4 +75,12 @@ module FootballEnums {
         #Finalised;
     };
 
+    public type MatchPeriod = {
+        #FirstHalf;
+        #SecondHalf;
+        #ExtraTimeFirstHalf;
+        #ExtraTimeSecondHalf;
+        #PenaltyShootout;
+    };
+
 };
