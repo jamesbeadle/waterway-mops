@@ -9,7 +9,7 @@ import Int "mo:base/Int";
 import Ledger "../../../base/def/sns-wrappers/ledger";
 
 module {
-    public class PayoutManager() {
+    public class PayoutController() {
         
         public func payoutUser(principal : Ids.PrincipalId, amount : Nat64, tokenledgerId : Text) : async Result.Result<(), Ledger.TransferError> {
             let token_ledger : Ledger.Interface = actor (tokenledgerId);

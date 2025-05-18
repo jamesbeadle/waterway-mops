@@ -7,7 +7,7 @@ import CanisterUtilities "./utilities";
 import Enums "../../../base/enums";
 import Management "../../../base/def/management";
 
-actor class _DeleteCanisterDefinition() {
+actor class _CyclesTransferActor() {
 
     public shared ({ caller }) func transferCycles(dto : CanisterCommands.TopupCanister) : async Result.Result<(), Enums.Error> {
         assert Principal.toText(caller) == CanisterIds.WATERWAY_LABS_BACKEND_CANISTER_ID;

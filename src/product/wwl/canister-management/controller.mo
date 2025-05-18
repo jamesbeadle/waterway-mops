@@ -8,10 +8,10 @@ import CanisterCommands "commands";
 import CanisterIds "../canister-ids";
 import CanisterQueries "queries";
 import CanisterUtilities "./utilities";
-import DeleteCanisterDefinition "delete-canister-definition";
 import Enums "../../../base/enums";
 import Management "../../../base/def/management";
 import WaterwayLabsEnums "../enums";
+import CyclesTransferActor "cycles-transfer-actor";
 
 module {
     public class CanisterManager() {
@@ -122,9 +122,9 @@ module {
                 transferCycles : (dto : CanisterCommands.TopupCanister) -> async Result.Result<(), Enums.Error>;
             };
 
-            // Install the deletion Canister Definition
+            // Install the cycle transfer actor
             let _ = await CanisterUtilities.stopCanister_(canister_actor, IC);
-            let _ = await (system DeleteCanisterDefinition._DeleteCanisterDefinition)(#reinstall canister_actor)();
+            let _ = await (system CyclesTransferActor._CyclesTransferActor)(#reinstall canister_actor)();
             let _ = await CanisterUtilities.startCanister_(canister_actor, IC);
 
             // set compute allocation to 0
