@@ -26,6 +26,7 @@ module FixtureQueries {
 
     public type GetPostponedFixtures = {
         leagueId : FootballIds.LeagueId;
+        seasonId : FootballIds.SeasonId;
     };
 
     public type PostponedFixtures = {

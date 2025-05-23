@@ -2,6 +2,7 @@ import FootballDefinitions "../../../domain/football/definitions";
 import FootballEnums "../../../domain/football/enums";
 import FootballIds "../../../domain/football/ids";
 import Ids "../../../base/ids";
+import Definitions "../../../base/definitions";
 
 module PlayerQueries {
     public type GetPlayers = {
@@ -24,8 +25,8 @@ module PlayerQueries {
         nationality : Ids.CountryId;
         status : FootballEnums.PlayerStatus;
         leagueId: FootballIds.LeagueId;
-        parentLeagueId: FootballIds.LeagueId;
-        parentClubId: FootballIds.ClubId;
+        parentLeagueId: ?FootballIds.LeagueId;
+        parentClubId: ?FootballIds.ClubId;
         currentLoanEndDate: Int;
 
     };
@@ -73,7 +74,8 @@ module PlayerQueries {
         gameweeks : [PlayerGameweek];
         valueHistory : [ValueHistory];
         status : FootballEnums.PlayerStatus;
-        parentClubId : FootballIds.ClubId;
+        parentLeagueId: ?FootballIds.LeagueId;
+        parentClubId : ?FootballIds.ClubId;
         latestInjuryEndDate : Int;
         injuryHistory : [InjuryHistory];
         retirementDate : Int;
@@ -166,5 +168,32 @@ module PlayerQueries {
         totalValue : Nat16;
         priorValue : Nat16;
     };
+
+    public type PlayerSeason = {
+        playerId: FootballIds.PlayerId;
+        seasonId : FootballIds.SeasonId;
+        gameweeks : [PlayerGameweek];
+        totalPoints : Int16;
+    };
+
+    public type PlayerClubCup = {
+        playerId: FootballIds.PlayerId;
+        clubCupId: FootballIds.ClubCupId;
+        seasonId : FootballIds.SeasonId;
+        // TODO: add required information
+    };
+
+    public type PlayerInternationalFriendly = {
+        playerId: FootballIds.PlayerId;
+        fixtureDate: Definitions.UnixTime;
+    };
+
+    public type PlayerInternationalTournament = {
+        playerId: FootballIds.PlayerId;
+        internationalTournamentId: FootballIds.InternationalTournamentId;
+        year : Definitions.Year;
+        // TODO: add required information
+    };
+
 
 }

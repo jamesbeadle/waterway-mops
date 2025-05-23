@@ -27,26 +27,6 @@ module LeagueQueries {
         nationalTier: Nat;
     };
 
-    public type GetLeagueStatus = {
-        leagueId: FootballIds.LeagueId;
-    };
-
-    public type LeagueStatus = {
-        leagueId : FootballIds.LeagueId;
-        activeSeasonId : FootballIds.SeasonId;
-        activeMonth : BaseDefinitions.CalendarMonth;
-        unplayedGameweek : FootballDefinitions.GameweekNumber;
-        activeGameweek : FootballDefinitions.GameweekNumber;
-        completedGameweek : FootballDefinitions.GameweekNumber;
-        transferWindowActive : Bool;
-        seasonActive : Bool;
-        totalGameweeks : Nat8;
-        transferWindowStartDay : Nat8;
-        transferWindowStartMonth : Nat8;
-        transferWindowEndDay : Nat8;
-        transferWindowEndMonth : Nat8;
-    };
-
     public type GetLeagueTable = {
         leagueId: FootballIds.LeagueId;
         seasonId: FootballIds.SeasonId;

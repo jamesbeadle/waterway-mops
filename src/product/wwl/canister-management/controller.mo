@@ -14,7 +14,7 @@ import WaterwayLabsEnums "../enums";
 import CyclesTransferActor "cycles-transfer-actor";
 
 module {
-    public class CanisterManager() {
+    public class CanisterController() {
 
         public func getCanisterInfo(dto : CanisterQueries.GetCanisterInfo, app : WaterwayLabsEnums.WaterwayLabsApp) : async Result.Result<CanisterQueries.CanisterInfo, Enums.Error> {
 

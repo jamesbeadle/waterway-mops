@@ -37,19 +37,10 @@ module Enums {
     };
 
     public type NotificationType = {
-        #CreateClub;
-        #UpdateClub;
-        #PromoteClub;
-        #RelegateClub;
-        #CreateLeague;
-        #UpdateLeague;
         #AddInitialFixtures;
-        #BeginSeason;
         #BeginGameweek;
-        #CompleteGameweek;
-        #CompleteFixture;
         #FinaliseFixture;
-        #CompleteSeason;
+        #CompleteGameweek;
         #RevaluePlayerUp;
         #RevaluePlayerDown;
         #LoanPlayer;
@@ -57,11 +48,7 @@ module Enums {
         #ExpireLoan;
         #TransferPlayer;
         #SetFreeAgent;
-        #CreatePlayer;
-        #UpdatePlayer;
-        #InjuryUpdated;
         #RetirePlayer;
-        #UnretirePlayer;
         #ChangePlayerPosition;
     }
 
