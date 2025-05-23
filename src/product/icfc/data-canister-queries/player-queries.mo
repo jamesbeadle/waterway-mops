@@ -99,14 +99,16 @@ module PlayerQueries {
         points : Int16;
         fixtureId : FootballIds.FixtureId;
     };
-
+    
     public type PlayerEventData = {
         fixtureId : FootballIds.FixtureId;
-        playerId : Nat16;
-        eventType : FootballEnums.PlayerEventType;
-        eventStartMinute : Nat8;
-        eventEndMinute : Nat8;
+        playerId : FootballIds.PlayerId;
         clubId : FootballIds.ClubId;
+        eventType : FootballEnums.PlayerEventType;
+        eventStartMinute : FootballDefinitions.MatchMinute;
+        eventEndMinute : FootballDefinitions.MatchMinute;
+        minutesIntoExtraTime : FootballDefinitions.ExtraTimeMinuteTotal;
+        matchPeriod: FootballEnums.MatchPeriod;
     };
 
 
