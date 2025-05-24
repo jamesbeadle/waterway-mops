@@ -37,6 +37,7 @@ module FixtureQueries {
 
     public type Fixture = {
         id : FootballIds.FixtureId;
+        leagueId: FootballIds.LeagueId;
         seasonId : FootballIds.SeasonId;
         gameweek : FootballDefinitions.GameweekNumber;
         kickOff : Int;
