@@ -6,6 +6,7 @@ import Nat8 "mo:base/Nat8";
 import Nat64 "mo:base/Nat64";
 import Text "mo:base/Text";
 import Time "mo:base/Time";
+import Float "mo:base/Float";
 
 import ConversionUtilities "conversion-utilities";
 
@@ -373,6 +374,11 @@ module DateTimeUtilities {
     let epochDays = daysSince1970(targetYear, targetDayOfYear);
     let epochSeconds = epochDays * secondsInADay;
     return epochSeconds * nanosecondsPerSecond;
+  };
+
+  public func convertSecondsToYears(seconds : Int) : Float {
+      let secondsInAYear = 31_536_000;
+      Float.fromInt(seconds) / Float.fromInt(secondsInAYear);
   };
 
 };

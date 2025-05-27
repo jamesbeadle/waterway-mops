@@ -94,7 +94,7 @@ module PlayerQueries {
     };
         
     public type PlayerGameweek = {
-        number : Nat8;
+        gameweek : FootballDefinitions.GameweekNumber;
         events : [PlayerEventData];
         points : Int16;
         fixtureId : FootballIds.FixtureId;
