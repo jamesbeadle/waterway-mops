@@ -1,4 +1,5 @@
 import Blob "mo:base/Blob";
+import Enums "../../../base/enums";
 import Ids "../../../base/ids";
 import WaterwayLabsEnums "../../../product/wwl/enums";
 
@@ -32,6 +33,7 @@ module CanisterCommands {
         app : WaterwayLabsEnums.WaterwayLabsApp;
         canisterId : Ids.CanisterId;
         controller : Ids.PrincipalId;
+        canisterType : Enums.CanisterType;
     };
 
     public type RemoveController = {
