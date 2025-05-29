@@ -40,6 +40,7 @@ module CanisterCommands {
         app : WaterwayLabsEnums.WaterwayLabsApp;
         canisterId : Ids.CanisterId;
         controller : Ids.PrincipalId;
+        canisterType : Enums.CanisterType;
     };
 
     public type TakeCanisterSnapshot = {
