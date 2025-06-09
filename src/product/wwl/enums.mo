@@ -9,7 +9,6 @@ module Enums {
         #TransferKings;
         #JeffBets;
         #ICPFA;
-        #ICGC;
         #ICF1;
         #OpenBook;
         #OpenChef;
@@ -31,8 +30,6 @@ module Enums {
 
     public type TokenEcosystem = {
         #ICFC;
-        #ICGC;
-        #ICF1;
     };
 
     public type LinkStatus = {

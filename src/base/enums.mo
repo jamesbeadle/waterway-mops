@@ -7,7 +7,6 @@ module BaseEnums {
         #GBP;
         #EUR;
         #ICFC;
-        #ICGC;
     };
 
     public type Gender = {
