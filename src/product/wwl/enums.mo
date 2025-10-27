@@ -1,6 +1,6 @@
 module Enums {
 
-    public type WaterwayLabsApp = {
+    public type App = {
         #WaterwayLabs;
         #ICFC;
         #FootballGod;
@@ -16,18 +16,9 @@ module Enums {
         #OpenCare;
         #OpenBeats;
         #GolfPad;
+        #IC1;
     };
-
-    public type LogType = {
-        #Warning;
-        #Error;
-        #Information;
-        #Success;
-        #SystemCheck;
-        #CanisterTopup;
-        #CanisterCreated;
-    };
-
+    
     public type TokenEcosystem = {
         #ICFC;
     };

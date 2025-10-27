@@ -32,7 +32,7 @@ module CanisterIds {
 
     public let CKBTC_LEDGER_CANISTER_ID = "mxzaz-hqaaa-aaaar-qaada-cai";
 
-    public func getAppCanisterId(app : Enums.WaterwayLabsApp) : ?Text {
+    public func getAppCanisterId(app : Enums.App) : ?Text {
         switch (app) {
             case (#ICFC) { return ?CanisterIds.ICFC_BACKEND_CANISTER_ID };
             case (#WaterwayLabs) {
