@@ -51,7 +51,7 @@ module Enums {
     };
 
     public type GameweekStatus = {
-        #Incomplete;
+        #NotStarted;
         #Active;
         #Complete; 
     };
